@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Nunito;
+  src: url('./assets/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url('./assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+.bg-feathers {
+  background-image: url('./assets//images//feathers.png');
+  background-position: 58rem -15rem;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+}
