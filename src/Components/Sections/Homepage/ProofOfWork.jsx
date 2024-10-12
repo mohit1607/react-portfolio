@@ -6,7 +6,7 @@ import image from '../../../assets/images/yelan.png'
 
 const ProofOfWork = () => {
     return (
-        <section className='w-full mt-[5rem] mb-[5rem] flex flex-col px-[10%]'>
+        <section className='w-full mt-[5rem] mb-[10rem] flex flex-col px-[10%]'>
             <h2 className='text-[36px] text-center font-semibold font-nunito mb-[85px]'>Work (antiques)</h2>
             <div className='w-full relative flex gap-[20px]'>
 

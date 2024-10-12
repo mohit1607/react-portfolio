@@ -4,6 +4,8 @@ import Marquees from '../Components/Sections/Homepage/Marquees'
 import Testimonials from '../Components/Sections/Homepage/Testimonials'
 import About from '../Components/Sections/Homepage/About'
 import ProofOfWork from '../Components/Sections/Homepage/ProofOfWork'
+import Footer from '../Components/Sections/Footer'
+import ArtGallary from '../Components/Sections/Homepage/ArtGallary'
 
 export const Home = () => {
   return (
@@ -13,6 +15,8 @@ export const Home = () => {
         <Testimonials/>
         <About/>
         <ProofOfWork/>
+        <ArtGallary/>
+        <Footer/>
     </div>
   )
 }
