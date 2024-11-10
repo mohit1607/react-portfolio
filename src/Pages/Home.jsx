@@ -6,12 +6,15 @@ import About from '../Components/Sections/Homepage/About'
 import ProofOfWork from '../Components/Sections/Homepage/ProofOfWork'
 import Footer from '../Components/Sections/Footer'
 import ArtGallary from '../Components/Sections/Homepage/ArtGallary'
+import BusinessCard from '../Components/Sections/Homepage/BusinessCard'
 
 export const Home = () => {
   return (
-    <div className='w-full relative'>
+    <div className='w-full relative flex flex-col items-center'>
         <Hero/>
         <Marquees/>
+        {/* <BusinessCard/>  */}
+        {/* legit skill showcase card */}
         <Testimonials/>
         <About/>
         <ProofOfWork/>

@@ -6,23 +6,23 @@ import image from '../../../assets/images/yelan.png'
 
 const ProofOfWork = () => {
     return (
-        <section className='w-full mt-[5rem] mb-[10rem] flex flex-col px-[10%]'>
-            <h2 className='text-[36px] text-center font-semibold font-nunito mb-[85px]'>Work (antiques)</h2>
+        <section className='w-full mt-[5rem] mb-[10rem] flex flex-col px-[3%] sm:px-[10%] max-w-[1400px]'>
+            <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito mb-[5rem]'>Work (antiques)</h2>
             <div className='w-full relative flex gap-[20px]'>
 
                 {/* first column */}
-                <div className='flex-1 flex flex-col gap-[20px]'>
-                    <div className='h-[200px] rounded-[20px] w-full p-[35px] bg-accent'>
-                        <h4 className='text-[36px] font-nunito font-bold text-white'>Design Portfolio</h4>
-                        <p className='text-[16px] font-nunito text-white'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
+                <div className='flex-1  flex-col gap-[20px] hidden md:flex'>
+                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5]'>
+                        <h4 className='text-[36px] font-nunito font-bold group-hover:text-white text-black'>Design Portfolio</h4>
+                        <p className='text-[16px] font-nunito text-black group-hover:text-white'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
                     </div>
-                    <div className='h-[200px] rounded-[20px] w-full p-[35px] bg-[#f5f5f5]'>
-                        <h4 className='text-[36px] font-nunito font-semibold'>Front-end</h4>
-                        <p className='text-[16px] font-nunito'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
+                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5]'>
+                        <h4 className='text-[36px] font-nunito font-bold group-hover:text-white text-black'>Front-end</h4>
+                        <p className='text-[16px] font-nunito text-black group-hover:text-white'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
                     </div>
-                    <div className='h-[200px] rounded-[20px] w-full p-[35px] bg-[#f5f5f5]'>
-                        <h4 className='text-[36px] font-nunito font-semibold'>Back-end</h4>
-                        <p className='text-[16px] font-nunito'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
+                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5]'>
+                        <h4 className='text-[36px] font-nunito font-bold group-hover:text-white text-black'>Back-end</h4>
+                        <p className='text-[16px] font-nunito text-black group-hover:text-white'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
                     </div>
                 </div>
 

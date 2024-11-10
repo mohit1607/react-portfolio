@@ -29,9 +29,9 @@ const ArtGallary = () => {
     }
 
     return (
-        <div className='w-full h-[100vh] relative flex justify-center items-center flex-col gap-[20px]'>
+        <div className='w-full max-w-[1400px] px-[3%] sm:px-[10%] relative flex justify-center items-center flex-col gap-[20px]'>
             <h2 className='text-[36px] text-center font-semibold font-nunito mb-[50px]'>Art Gallary</h2>
-            <div className='w-[60%] h-[90%] flex justify-center gap-3'>
+            <div className='w-full h-auto md:h-[80vh] flex flex-col md:flex-row justify-center gap-3'>
                 <div onClick={() => handleClick(1)} className={`${state[1] ? 'flex-[40%]' : 'flex-1'} transition-all ease-in-out duration-500 bg-yellow-200 rounded-[3rem] overflow-hidden`}><img src={sample1} className='w-full h-full object-cover' alt='Nani' /></div>
                 <div onClick={() => handleClick(2)} className={`${state[2] ? 'flex-[40%]' : 'flex-1'} transition-all ease-in-out duration-500 bg-yellow-200 rounded-[3rem] overflow-hidden`}><img src={sample2} className='w-full h-full object-cover' alt='Nani' /></div>
                 <div onClick={() => handleClick(3)} className={`${state[3] ? 'flex-[40%]' : 'flex-1'} transition-all ease-in-out duration-500 bg-yellow-200 rounded-[3rem] overflow-hidden`}><img src={sample3} className='w-full h-full object-cover' alt='Nani' /></div>
