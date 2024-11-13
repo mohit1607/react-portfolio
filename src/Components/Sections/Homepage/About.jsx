@@ -3,13 +3,18 @@ import { BsTwitter } from "react-icons/bs";
 import React from 'react'
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import person from '../../../assets/images/archperson.jpg'
+import { useScroll, useTransform, motion } from "framer-motion";
 
 const About = () => {
+
+  const { scrollYProgress } = useScroll()
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 2])
+
   return (
     <div className='w-full py-[5rem] px-[3%] md:px-[10%] flex flex-col items-center max-w-[1400px]'>
-      <div className='overflow-hidden rounded-[20px] w-full h-[25rem] md:h-[35rem] mb-[50px]'>
+      <motion.div className='overflow-hidden rounded-[20px] w-full h-[25rem] md:h-[35rem] mb-[50px]'>
         <img className='w-full h-full object-cover' src={person} alt="person" />
-      </div>
+      </motion.div>
       <h2 className='sm:text-[3rem] text-[1.5rem] font-bold sm:font-semibold text-center font-nunito mb-[15px]'>MOHIT ASHLIYA</h2>
       <p className='text-[0.8rem] leading-relaxed sm:text-[1rem] text-center w-[70%]'>
         Lorem ipsum dolor sit amet consectetur. Etiam aliquam vel dolor accumsan nisi bibendum turpis habitant vulputate. Eleifend habitant et convallis eget nisi amet enim. Lorem purus mattis egestas pretium magna. Vivamus felis luctus nam adipiscing nascetur volutpat sed etiam mollis.

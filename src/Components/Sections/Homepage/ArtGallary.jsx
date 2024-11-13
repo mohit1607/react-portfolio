@@ -4,6 +4,7 @@ import sample2 from '../../../assets/images/sample2.jpg'
 import sample3 from '../../../assets/images/sample3.jpeg'
 import sample4 from '../../../assets/images/sample4.jpg'
 import yelan from '../../../assets/images/yelan.png'
+import { motion } from 'framer-motion'
 
 const ArtGallary = () => {
     const [state, setState] = useState({
@@ -29,7 +30,14 @@ const ArtGallary = () => {
     }
 
     return (
-        <div className='w-full max-w-[1400px] px-[3%] sm:px-[10%] relative flex justify-center items-center flex-col gap-[20px]'>
+        <motion.div
+            initial={{ y: '50%', opacity: 0 }}
+            animate={{ y: '0%', opacity: 1 }}
+            transition={{
+                duration: 0.5,
+                stiffness: 50,
+            }}
+            className='w-full max-w-[1400px] px-[3%] sm:px-[10%] relative flex justify-center items-center flex-col gap-[20px]'>
             <h2 className='text-[36px] text-center font-semibold font-nunito mb-[50px]'>Art Gallary</h2>
             <div className='w-full h-auto md:h-[80vh] flex flex-col md:flex-row justify-center gap-3'>
                 <div onClick={() => handleClick(1)} className={`${state[1] ? 'flex-[40%]' : 'flex-1'} transition-all ease-in-out duration-500 bg-yellow-200 rounded-[3rem] overflow-hidden`}><img src={sample1} className='w-full h-full object-cover' alt='Nani' /></div>
@@ -40,7 +48,7 @@ const ArtGallary = () => {
                 <div onClick={() => handleClick(6)} className={`${state[6] ? 'flex-[40%]' : 'flex-1'} transition-all ease-in-out duration-500 bg-yellow-200 rounded-[3rem] overflow-hidden`}><img src={yelan} className='w-full h-full object-cover' alt='Nani' /></div>
                 <div onClick={() => handleClick(7)} className={`${state[7] ? 'flex-[40%]' : 'flex-1'} transition-all ease-in-out duration-500 bg-yellow-200 rounded-[3rem] overflow-hidden`}><img src={yelan} className='w-full h-full object-cover' alt='Nani' /></div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
