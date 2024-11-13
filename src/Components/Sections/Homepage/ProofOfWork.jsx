@@ -12,15 +12,15 @@ const ProofOfWork = () => {
 
                 {/* first column */}
                 <div className='flex-1  flex-col gap-[20px] hidden md:flex'>
-                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5]'>
+                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5] cur'>
                         <h4 className='text-[36px] font-nunito font-bold group-hover:text-white text-black'>Design Portfolio</h4>
                         <p className='text-[16px] font-nunito text-black group-hover:text-white'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
                     </div>
-                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5]'>
+                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5] cur'>
                         <h4 className='text-[36px] font-nunito font-bold group-hover:text-white text-black'>Front-end</h4>
                         <p className='text-[16px] font-nunito text-black group-hover:text-white'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
                     </div>
-                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5]'>
+                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5] cur'>
                         <h4 className='text-[36px] font-nunito font-bold group-hover:text-white text-black'>Back-end</h4>
                         <p className='text-[16px] font-nunito text-black group-hover:text-white'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
                     </div>
@@ -28,16 +28,16 @@ const ProofOfWork = () => {
 
                 {/* second column */}
                 <div className='flex-1 grid grid-cols-2 gap-[20px] grid-rows-3'>
-                    <div className='overflow-hidden rounded-[20px] row-span-3'>
+                    <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
                         <img className='w-full h-full object-cover' src={sample1} alt="yelan genshin impact" />
                     </div>
-                    <div className='overflow-hidden rounded-[20px] row-span-2'>
+                    <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
                         <img className='w-full h-full object-cover' src={sample2} alt="yelan genshin impact" />
                     </div>
-                    <div className='overflow-hidden rounded-[20px] row-span-3'>
-                        <img className='w-full h-full object-cover row-span-1' src={sample3} alt="yelan genshin impact" />
+                    <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
+                        <img className='w-full h-full object-cover' src={sample3} alt="yelan genshin impact" />
                     </div>
-                    <div className='overflow-hidden rounded-[20px] row-span-2'>
+                    <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
                         <img className='w-full h-full object-cover' src={image} alt="yelan genshin impact" />
                     </div>
                 </div>
