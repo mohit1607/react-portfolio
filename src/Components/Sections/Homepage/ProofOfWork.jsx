@@ -3,6 +3,7 @@ import sample1 from '../../../assets/images/sample1.jpg'
 import sample2 from '../../../assets/images/sample2.jpg'
 import sample3 from '../../../assets/images/sample3.jpeg'
 import image from '../../../assets/images/yelan.png'
+import { motion } from 'framer-motion'
 
 const ProofOfWork = () => {
 
