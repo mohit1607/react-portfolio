@@ -6,48 +6,107 @@ import image from '../../../assets/images/yelan.png'
 import { motion } from 'framer-motion'
 
 const ProofOfWork = () => {
-
     const tabs = {
         frontEnd: 'frontend',
         backend: 'backend',
         design: 'design'
     }
-    const [activeTab, setActiveTab] = useState('')
+    const [activeTab, setActiveTab] = useState(tabs.design)
+
+    const handleTabClick = (tab) => {
+        setActiveTab(tab)
+    }
 
     return (
         <motion.section className='w-full mt-[5rem] mb-[10rem] flex flex-col px-[3%] sm:px-[10%] max-w-[1400px]'>
             <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito mb-[5rem]'>Work (antiques)</h2>
+            
+            {/* Button Group for Mobile */}
+            <div className='w-full flex  justify-center items-center mb-8 gap-4'>
+                <button
+                    onClick={() => handleTabClick(tabs.frontEnd)}
+                    className={`w-[8rem] px-4 py-2 font-semibold rounded-full shadow-xl ${
+                        activeTab === tabs.frontEnd ? 'bg-accent text-white' : 'bg-[#f4f4f4]'
+                    }`}
+                >
+                    Frontend
+                </button>
+                <button
+                    onClick={() => handleTabClick(tabs.design)}
+                    className={`w-[8rem] px-4 py-2 font-semibold rounded-full shadow-xl ${
+                        activeTab === tabs.design ? 'bg-accent text-white' : 'bg-[#f4f4f4]'
+                    }`}
+                >
+                    Design
+                </button>
+                <button
+                    onClick={() => handleTabClick(tabs.backend)}
+                    className={`w-[8rem] px-4 py-2 font-semibold rounded-full shadow-xl ${
+                        activeTab === tabs.backend ? 'bg-accent text-white' : 'bg-[#f4f4f4]'
+                    }`}
+                >
+                    Backend
+                </button>
+            </div>
+
             <div className='w-full relative flex gap-[20px]'>
 
-                {/* first column */}
-                <div className='flex-1  flex-col gap-[20px] hidden md:flex'>
-                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5]'>
-                        <h4 className='text-[36px] font-nunito font-bold group-hover:text-white text-black'>Design Portfolio</h4>
-                        <p className='text-[16px] font-nunito text-black group-hover:text-white'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
+                {/* Text Cards for Desktop */}
+                <div className='flex-1 flex-col gap-[20px] hidden md:flex'>
+                    <div
+                        onClick={() => handleTabClick(tabs.design)}
+                        className={`h-[200px] rounded-[20px] w-full p-[35px] cursor-pointer transition-all duration-200 ease-linear ${
+                            activeTab === tabs.design ? 'bg-accent text-white' : 'bg-[#f5f5f5] text-black'
+                        }`}
+                    >
+                        <h4 className={`text-[36px] font-nunito font-bold ${activeTab === tabs.design ? 'text-white' : 'text-black'}`}>
+                            Design Portfolio
+                        </h4>
+                        <p className={`text-[16px] font-nunito ${activeTab === tabs.design ? 'text-white' : 'text-black'}`}>
+                            Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.
+                        </p>
                     </div>
-                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5]'>
-                        <h4 className='text-[36px] font-nunito font-bold group-hover:text-white text-black'>Front-end</h4>
-                        <p className='text-[16px] font-nunito text-black group-hover:text-white'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
+                    <div
+                        onClick={() => handleTabClick(tabs.frontEnd)}
+                        className={`h-[200px] rounded-[20px] w-full p-[35px] cursor-pointer transition-all duration-200 ease-linear ${
+                            activeTab === tabs.frontEnd ? 'bg-accent text-white' : 'bg-[#f5f5f5] text-black'
+                        }`}
+                    >
+                        <h4 className={`text-[36px] font-nunito font-bold ${activeTab === tabs.frontEnd ? 'text-white' : 'text-black'}`}>
+                            Front-end
+                        </h4>
+                        <p className={`text-[16px] font-nunito ${activeTab === tabs.frontEnd ? 'text-white' : 'text-black'}`}>
+                            Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.
+                        </p>
                     </div>
-                    <div className='h-[200px] rounded-[20px] w-full p-[35px] hover:bg-accent group transition-all duration-200 ease-linear bg-[#f5f5f5]'>
-                        <h4 className='text-[36px] font-nunito font-bold group-hover:text-white text-black'>Back-end</h4>
-                        <p className='text-[16px] font-nunito text-black group-hover:text-white'>Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.</p>
+                    <div
+                        onClick={() => handleTabClick(tabs.backend)}
+                        className={`h-[200px] rounded-[20px] w-full p-[35px] cursor-pointer transition-all duration-200 ease-linear ${
+                            activeTab === tabs.backend ? 'bg-accent text-white' : 'bg-[#f5f5f5] text-black'
+                        }`}
+                    >
+                        <h4 className={`text-[36px] font-nunito font-bold ${activeTab === tabs.backend ? 'text-white' : 'text-black'}`}>
+                            Back-end
+                        </h4>
+                        <p className={`text-[16px] font-nunito ${activeTab === tabs.backend ? 'text-white' : 'text-black'}`}>
+                            Lorem ipsum dolor sit amet consectetur. Dolor at ullamcorper aliquam facilisis arcu.
+                        </p>
                     </div>
                 </div>
 
-                {/* second column */}
+                {/* Image Grid */}
                 <div className='flex-1 grid grid-cols-2 gap-[20px] grid-rows-3'>
                     <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
-                        <img className='w-full h-full object-cover' src={sample1} alt="yelan genshin impact" />
+                        <img className='w-full h-full object-cover' src={sample1} alt="Sample 1" />
                     </div>
                     <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
-                        <img className='w-full h-full object-cover' src={sample2} alt="yelan genshin impact" />
+                        <img className='w-full h-full object-cover' src={sample2} alt="Sample 2" />
                     </div>
                     <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
-                        <img className='w-full h-full object-cover' src={sample3} alt="yelan genshin impact" />
+                        <img className='w-full h-full object-cover' src={sample3} alt="Sample 3" />
                     </div>
                     <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
-                        <img className='w-full h-full object-cover' src={image} alt="yelan genshin impact" />
+                        <img className='w-full h-full object-cover' src={image} alt="Sample 4" />
                     </div>
                 </div>
             </div>
