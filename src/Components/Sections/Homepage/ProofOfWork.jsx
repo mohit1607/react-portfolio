@@ -22,7 +22,7 @@ const ProofOfWork = () => {
             <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito mb-[5rem]'>Work (antiques)</h2>
             
             {/* Button Group for Mobile */}
-            <div className='w-full flex  justify-center items-center mb-8 gap-4'>
+            <div className='w-full flex md:hidden  justify-center items-center mb-8 gap-4'>
                 <button
                     onClick={() => handleTabClick(tabs.frontEnd)}
                     className={`w-[8rem] px-4 py-2 font-semibold rounded-full shadow-xl ${
