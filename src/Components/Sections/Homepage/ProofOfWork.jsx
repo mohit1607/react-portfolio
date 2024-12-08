@@ -20,30 +20,27 @@ const ProofOfWork = () => {
     return (
         <motion.section className='w-full mt-[5rem] mb-[10rem] flex flex-col px-[3%] sm:px-[10%] max-w-[1400px]'>
             <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito mb-[5rem]'>Work (antiques)</h2>
-            
+
             {/* Button Group for Mobile */}
-            <div className='w-full flex md:hidden  justify-center items-center mb-8 gap-4'>
+            <div className='w-full flex lg:hidden  justify-center items-center mb-8 gap-4'>
                 <button
                     onClick={() => handleTabClick(tabs.frontEnd)}
-                    className={`w-[8rem] px-4 py-2 font-semibold rounded-full shadow-xl ${
-                        activeTab === tabs.frontEnd ? 'bg-accent text-white' : 'bg-[#f4f4f4]'
-                    }`}
+                    className={`w-[8rem] px-4 py-2 font-semibold rounded-full shadow-xl ${activeTab === tabs.frontEnd ? 'bg-accent text-white' : 'bg-[#f4f4f4]'
+                        }`}
                 >
                     Frontend
                 </button>
                 <button
                     onClick={() => handleTabClick(tabs.design)}
-                    className={`w-[8rem] px-4 py-2 font-semibold rounded-full shadow-xl ${
-                        activeTab === tabs.design ? 'bg-accent text-white' : 'bg-[#f4f4f4]'
-                    }`}
+                    className={`w-[8rem] px-4 py-2 font-semibold rounded-full shadow-xl ${activeTab === tabs.design ? 'bg-accent text-white' : 'bg-[#f4f4f4]'
+                        }`}
                 >
                     Design
                 </button>
                 <button
                     onClick={() => handleTabClick(tabs.backend)}
-                    className={`w-[8rem] px-4 py-2 font-semibold rounded-full shadow-xl ${
-                        activeTab === tabs.backend ? 'bg-accent text-white' : 'bg-[#f4f4f4]'
-                    }`}
+                    className={`w-[8rem] px-4 py-2 font-semibold rounded-full shadow-xl ${activeTab === tabs.backend ? 'bg-accent text-white' : 'bg-[#f4f4f4]'
+                        }`}
                 >
                     Backend
                 </button>
@@ -52,12 +49,11 @@ const ProofOfWork = () => {
             <div className='w-full relative flex gap-[20px]'>
 
                 {/* Text Cards for Desktop */}
-                <div className='flex-1 flex-col gap-[20px] hidden md:flex'>
+                <div className='flex-1 flex-col gap-[20px] hidden lg:flex'>
                     <div
                         onClick={() => handleTabClick(tabs.design)}
-                        className={`h-[200px] rounded-[20px] w-full p-[35px] cursor-pointer transition-all duration-200 ease-linear ${
-                            activeTab === tabs.design ? 'bg-accent text-white' : 'bg-[#f5f5f5] text-black'
-                        }`}
+                        className={`h-[200px] rounded-[20px] w-full p-[35px] overflow-hidden cursor-pointer transition-all duration-200 ease-linear ${activeTab === tabs.design ? 'bg-accent text-white' : 'bg-[#f5f5f5] text-black'
+                            }`}
                     >
                         <h4 className={`text-[36px] font-nunito font-bold ${activeTab === tabs.design ? 'text-white' : 'text-black'}`}>
                             Design Portfolio
@@ -68,9 +64,8 @@ const ProofOfWork = () => {
                     </div>
                     <div
                         onClick={() => handleTabClick(tabs.frontEnd)}
-                        className={`h-[200px] rounded-[20px] w-full p-[35px] cursor-pointer transition-all duration-200 ease-linear ${
-                            activeTab === tabs.frontEnd ? 'bg-accent text-white' : 'bg-[#f5f5f5] text-black'
-                        }`}
+                        className={`h-[200px] rounded-[20px] w-full p-[35px] overflow-hidden cursor-pointer transition-all duration-200 ease-linear ${activeTab === tabs.frontEnd ? 'bg-accent text-white' : 'bg-[#f5f5f5] text-black'
+                            }`}
                     >
                         <h4 className={`text-[36px] font-nunito font-bold ${activeTab === tabs.frontEnd ? 'text-white' : 'text-black'}`}>
                             Front-end
@@ -81,9 +76,8 @@ const ProofOfWork = () => {
                     </div>
                     <div
                         onClick={() => handleTabClick(tabs.backend)}
-                        className={`h-[200px] rounded-[20px] w-full p-[35px] cursor-pointer transition-all duration-200 ease-linear ${
-                            activeTab === tabs.backend ? 'bg-accent text-white' : 'bg-[#f5f5f5] text-black'
-                        }`}
+                        className={`h-[200px] rounded-[20px] w-full p-[35px] overflow-hidden cursor-pointer transition-all duration-200 ease-linear ${activeTab === tabs.backend ? 'bg-accent text-white' : 'bg-[#f5f5f5] text-black'
+                            }`}
                     >
                         <h4 className={`text-[36px] font-nunito font-bold ${activeTab === tabs.backend ? 'text-white' : 'text-black'}`}>
                             Back-end
