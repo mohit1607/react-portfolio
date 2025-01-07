@@ -3,7 +3,7 @@ import { BsTwitter } from "react-icons/bs";
 import React from 'react'
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import person from '../../../assets/images/archperson.jpg'
-import { useScroll, useTransform, motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 
 const About = () => {
 
@@ -11,7 +11,12 @@ const About = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 2])
 
   return (
-    <div className='w-full py-[5rem] px-[3%] md:px-[10%] flex flex-col items-center max-w-[1400px]'>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }} // Trigger when 20% is visible, only once
+      transition={{ duration: 0.5 }}
+      className='w-full py-[5rem] px-[3%] md:px-[10%] flex flex-col items-center max-w-[1400px]'>
       <motion.div className='overflow-hidden rounded-[20px] w-full h-[25rem] md:h-[35rem] mb-[50px]'>
         <img className='w-full h-full object-cover' src={person} alt="person" />
       </motion.div>
@@ -33,7 +38,7 @@ const About = () => {
           <FaGithub color="black" size={32} />
         </a>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

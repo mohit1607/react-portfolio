@@ -34,25 +34,25 @@ const Footer = () => {
 
       <div className='w-full flex flex-col md:flex-row flex-wrap justify-center lg:justify-between mb-[15px]'>
         <div className='flex gap-[25px] flex-wrap'>
-          <p className='text-[24px] font-poppins font-semibold'>Work</p>
-          <p className='text-[24px] font-poppins font-semibold'>About</p>
-          <p className='text-[24px] font-poppins font-semibold'>Hire me</p>
-          <p className='text-[24px] font-poppins font-semibold'>Insights</p>
-          <p className='text-[24px] font-poppins font-semibold'>Resume</p>
+          <p className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Work</p>
+          <p className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>About</p>
+          <p className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Hire me</p>
+          <p className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Insights</p>
+          <p className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Resume</p>
         </div>
         <div className='flex gap-[25px] flex-wrap'>
-          <p className='text-[24px] font-poppins font-semibold'>Peerlist</p>
-          <p className='text-[24px] font-poppins font-semibold'>X (twitter)</p>
-          <p className='text-[24px] font-poppins font-semibold'>Linked in</p>
+          <p className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Peerlist</p>
+          <p className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>X (twitter)</p>
+          <p className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Linked in</p>
         </div>
       </div>
 
       <div className='w-full flex flex-col sm:flex-row justify-center lg:justify-between mb-[15px] flex-wrap'>
         <div className='flex gap-[25px]'>
-          <p className='text-[24px] font-poppins font-semibold'>Mohit Ashliya 2024 &#174; (All rights reserved)</p>
+          <p className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Mohit Ashliya 2024 &#174; (All rights reserved)</p>
         </div>
         <div className='flex gap-[25px]'>
-          <p className='text-[24px] font-poppins font-semibold'>
+          <p className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>
             mail me at <span className='text-accent'>mohit.ashliya@gmail.com</span>
           </p>
         </div>

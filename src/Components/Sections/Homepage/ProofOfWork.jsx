@@ -3,7 +3,7 @@ import sample1 from '../../../assets/images/sample1.jpg'
 import sample2 from '../../../assets/images/sample2.jpg'
 import sample3 from '../../../assets/images/sample3.jpeg'
 import image from '../../../assets/images/yelan.png'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const ProofOfWork = () => {
     const tabs = {
@@ -18,7 +18,12 @@ const ProofOfWork = () => {
     }
 
     return (
-        <motion.section className='w-full mt-[5rem] mb-[10rem] flex flex-col px-[3%] sm:px-[10%] max-w-[1400px]'>
+        <motion.section
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }} // Trigger when 20% is visible, only once
+            transition={{ duration: 0.3 }}
+            className='w-full mt-[5rem] mb-[10rem] flex flex-col px-[3%] sm:px-[10%] max-w-[1400px]'>
             <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito mb-[5rem]'>Work (antiques)</h2>
 
             {/* Button Group for Mobile */}
@@ -89,22 +94,76 @@ const ProofOfWork = () => {
                 </div>
 
                 {/* Image Grid */}
-                <div className='flex-1 grid grid-cols-2 gap-[20px] grid-rows-3'>
-                    <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
-                        <img className='w-full h-full object-cover' src={sample1} alt="Sample 1" />
-                    </div>
-                    <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
-                        <img className='w-full h-full object-cover' src={sample2} alt="Sample 2" />
-                    </div>
-                    <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
-                        <img className='w-full h-full object-cover' src={sample3} alt="Sample 3" />
-                    </div>
-                    <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
-                        <img className='w-full h-full object-cover' src={image} alt="Sample 4" />
-                    </div>
-                </div>
+                <AnimatePresence mode='wait'>
+                    {activeTab === 'frontend' &&
+                        <motion.div
+                            key='frontend'
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 50 }}
+                            transition={{ duration: 0.3 }}
+                            className='flex-1 grid grid-cols-2 gap-[20px] grid-rows-3'>
+                            <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={sample1} alt="Sample 1" />
+                            </div>
+                            <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={sample2} alt="Sample 2" />
+                            </div>
+                            <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={sample3} alt="Sample 3" />
+                            </div>
+                            <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={image} alt="Sample 4" />
+                            </div>
+                        </motion.div>
+                    }
+                    {activeTab === 'backend' &&
+                        <motion.div
+                            key='design'
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 50 }}
+                            transition={{ duration: 0.3 }}
+                            className='flex-1 grid grid-cols-2 gap-[20px] grid-rows-3'>
+                            <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={sample2} alt="Sample 1" />
+                            </div>
+                            <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={sample2} alt="Sample 2" />
+                            </div>
+                            <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={sample1} alt="Sample 3" />
+                            </div>
+                            <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={image} alt="Sample 4" />
+                            </div>
+                        </motion.div>
+                    }
+                    {activeTab === 'design' &&
+                        <motion.div
+                            key='design'
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 50 }}
+                            transition={{ duration: 0.3 }}
+                            className='flex-1 grid grid-cols-2 gap-[20px] grid-rows-3'>
+                            <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={sample3} alt="Sample 1" />
+                            </div>
+                            <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={image} alt="Sample 2" />
+                            </div>
+                            <div className='overflow-hidden rounded-[20px] row-span-3 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={sample1} alt="Sample 3" />
+                            </div>
+                            <div className='overflow-hidden rounded-[20px] row-span-2 cursor-pointer'>
+                                <img className='w-full h-full object-cover' src={sample2} alt="Sample 4" />
+                            </div>
+                        </motion.div>
+                    }
+                </AnimatePresence>
             </div>
-        </motion.section>
+        </motion.section >
     )
 }
 

@@ -24,7 +24,12 @@ const Hero = () => {
   ];
 
   return (
-    <section className='w-full h-[70vh] sm:h-[90vh] relative px-[3%] sm:px-[10%] overflow-hidden max-w-[1400px] flex justify-center items-center md:mb-[5rem] lg:mb-0 py-24'>
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }} // Trigger when 20% is visible, only once
+      transition={{ duration: 0.5 }}
+      className='w-full h-[70vh] sm:h-[90vh] relative px-[3%] sm:px-[10%] overflow-hidden max-w-[1400px] flex justify-center items-center md:mb-[5rem] lg:mb-0 py-24'>
 
       {/* <AnimatedText /> */}
       <div className='w-full h-full rounded-2xl overflow-hidden relative flex justify-center items-center flex-col gap-4'>
@@ -37,17 +42,29 @@ const Hero = () => {
           initial={{ y: '40%', opacity: 0 }}
           animate={{ y: '0%', opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className='flex justify-center gap-4'>
+          className='flex justify-center gap-4 md:gap-8'>
           <motion.button
             whileHover={{
               x: [0, -10, 10, -10, 10, 0], // Keyframes for shaking
               transition: {
                 duration: 0.5,             // Controls how long the shake lasts
                 ease: "easeInOut",         // Smoothens the shake animation
-              }
+              },
             }}
+            animate={{ x: 0 }}
 
-            className='bg-accent text-white text-[1.5rempx] font-bold px-10 py-4 rounded-xl'>Explore Work</motion.button>
+            className='bg-accent text-white md:text-[1rem] text-[0.8rem] font-bold md:px-10 px-4  md:py-4 py-2 rounded-xl border-2 border-accent'>Contact</motion.button>
+          <motion.button
+            whileHover={{
+              y: [0, -10, 10, -10, 10, 0], // Keyframes for shaking
+              transition: {
+                duration: 0.5,             // Controls how long the shake lasts
+                ease: "easeInOut",         // Smoothens the shake animation
+              },
+            }}
+            animate={{ y: 0 }}
+
+            className='bg-white text-accent md:text-[1rem] text-[0.8rem] font-bold md:px-10 px-4  md:py-4 py-2 rounded-xl border-2 border-accent'>Explore work</motion.button>
           {/* <button className='bg-primary text-white text-[24px] font-bold px-10 py-4 rounded-xl'>Hire me</button> */}
         </motion.div>
         <div className="flex gap-4 mt-4">
@@ -69,7 +86,7 @@ const Hero = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
