@@ -7,7 +7,8 @@ import Footer from '../Components/Sections/Footer'
 // import ArtGallary from '../Components/Sections/Homepage/ArtGallary'
 // import BusinessCard from '../Components/Sections/Homepage/BusinessCard'
 import logo from '../assets/images/opaquelogo.png'
-import Navbar from "../Components/Navbar";
+// import Navbar from "../Components/Navbar";
+import Skills from '../Components/Sections/Homepage/Skills'
 // import BlobCursor from '../Components/BlobCursor'
 
 export const Home = () => {
@@ -19,12 +20,12 @@ export const Home = () => {
       </div>
       <Hero />
       {/* <BusinessCard/>  */}
+      <Skills />
       <ProofOfWork />
       <Testimonials />
       <About />
       {/* <ArtGallary /> */}
       <Footer />
-
       {/* <Navbar active={active} setActive={setActive} /> */}
     </div>
   )

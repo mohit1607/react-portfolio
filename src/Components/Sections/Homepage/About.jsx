@@ -14,12 +14,13 @@ const About = () => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }} // Trigger when 20% is visible, only once
-      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.3 }} // Trigger when 20% is visible, only once
+      transition={{ duration: 0.7 }}
       className='w-full py-[5rem] px-[3%] md:px-[10%] flex flex-col items-center max-w-[1400px]'>
-      <motion.div className='overflow-hidden rounded-[20px] w-full h-[25rem] md:h-[35rem] mb-[50px]'>
+      <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito mb-12'>About Me</h2>
+      <div className='overflow-hidden rounded-[20px] w-full h-[25rem] md:h-[35rem] mb-[50px]'>
         <img className='w-full h-full object-cover' src={person} alt="person" />
-      </motion.div>
+      </div>
       <h2 className='sm:text-[3rem] text-[1.5rem] font-bold sm:font-semibold text-center font-nunito mb-[15px]'>MOHIT ASHLIYA</h2>
       <p className='text-[0.8rem] leading-relaxed sm:text-[1rem] text-center w-[70%]'>
         Lorem ipsum dolor sit amet consectetur. Etiam aliquam vel dolor accumsan nisi bibendum turpis habitant vulputate. Eleifend habitant et convallis eget nisi amet enim. Lorem purus mattis egestas pretium magna. Vivamus felis luctus nam adipiscing nascetur volutpat sed etiam mollis.
