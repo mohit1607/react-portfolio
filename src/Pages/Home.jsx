@@ -9,6 +9,7 @@ import Footer from '../Components/Sections/Footer'
 import logo from '../assets/images/opaquelogo.png'
 // import Navbar from "../Components/Navbar";
 import Skills from '../Components/Sections/Homepage/Skills'
+import Form from '../Components/Sections/Homepage/Form'
 // import BlobCursor from '../Components/BlobCursor'
 
 export const Home = () => {
@@ -24,6 +25,7 @@ export const Home = () => {
       <ProofOfWork />
       <Testimonials />
       <About />
+      <Form />
       {/* <ArtGallary /> */}
       <Footer />
       {/* <Navbar active={active} setActive={setActive} /> */}
