@@ -34,7 +34,7 @@ const Hero = () => {
       {/* <AnimatedText /> */}
       <div className='w-full h-full rounded-2xl overflow-hidden relative flex justify-center items-center flex-col gap-4'>
 
-        <h1 className='md:text-[3rem] lg:text-[4rem] sm:text-[2.5rem] text-[1.5rem] text-center w-[70%] sm:w-[60%] font-bold font-nunito select-none'>
+        <h1 className='md:text-[3rem] lg:text-[4rem] sm:text-[2.5rem] text-[1.5rem] text-center w-[70%] sm:w-[60%] font-bold font-Fugaz select-none'>
           <span className='text-accent'>Your Vision </span>
           My Code Bringing Ideas to life
         </h1>
@@ -53,7 +53,7 @@ const Hero = () => {
             }}
             animate={{ x: 0 }}
 
-            className='bg-accent text-white md:text-[1rem] text-[0.8rem] font-bold md:px-10 px-4  md:py-4 py-2 rounded-xl border-2 border-accent'>Contact</motion.button>
+            className='bg-accent text-white md:text-[1rem] text-[0.8rem] font-bold md:px-10 px-4  md:py-4 py-2 rounded-xl border-2 border-accent font-poppins'>Contact</motion.button>
           <motion.button
             whileHover={{
               y: [0, -10, 10, -10, 10, 0], // Keyframes for shaking
@@ -64,7 +64,7 @@ const Hero = () => {
             }}
             animate={{ y: 0 }}
 
-            className='bg-white text-accent md:text-[1rem] text-[0.8rem] font-bold md:px-10 px-4  md:py-4 py-2 rounded-xl border-2 border-accent'>Explore work</motion.button>
+            className='bg-white font-poppins text-accent md:text-[1rem] text-[0.8rem] font-bold md:px-10 px-4  md:py-4 py-2 rounded-xl border-2 border-accent'>Explore work</motion.button>
           {/* <button className='bg-primary text-white text-[24px] font-bold px-10 py-4 rounded-xl'>Hire me</button> */}
         </motion.div>
         <div className="flex gap-4 mt-4">

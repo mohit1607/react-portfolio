@@ -11,6 +11,8 @@ import js from '../../../assets/images/skills/js.png'
 import reactnative from '../../../assets/images/skills/reactnative.png'
 import nextjs from '../../../assets/images/skills/nextjs.png'
 import tailwind from '../../../assets/images/skills/tailwind.png'
+import ts from '../../../assets/images/skills/ts.png'
+import sanity from '../../../assets/images/skills/sanity.png'
 
 const Skills = () => {
 
@@ -23,8 +25,10 @@ const Skills = () => {
         { id: 6, src: python, alt: 'Python' },
         { id: 3, src: fastapi, alt: 'FastAPI' },
         { id: 7, src: js, alt: 'Java Script' },
-        { id: 7, src: nextjs, alt: 'Next js' },
-        { id: 7, src: tailwind, alt: 'Tailwind Css' },
+        { id: 8, src: nextjs, alt: 'Next js' },
+        { id: 9, src: tailwind, alt: 'Tailwind Css' },
+        { id: 10, src: ts, alt: 'Type Script' },
+        { id: 11, src: sanity, alt: 'Sanity CMS' },
     ];
 
     return (

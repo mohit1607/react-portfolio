@@ -10,18 +10,19 @@ const Form = () => {
             transition={{ duration: 0.5 }}
             className='w-full relative px-[3%] sm:px-[10%] overflow-hidden max-w-[1400px] flex flex-col justify-start items-center py-12 gap-8'
         >
-            <div className='w-full h-[30rem] flex gap-4'>
+            <div className='w-full h-[30rem] flex gap-4 justify-center'>
                 <div className='h-full rounded-xl p-8 shadow-xl w-[25rem] flex flex-col gap-3'>
-                    <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito'>Discuss your potential idea</h2>
-                    <input type="text" className='w-full border-2 border-black rounded-xl px-4 py-2 border-opacity-30' placeholder='Your Good Name...' />
-                    <textarea type="text" className='w-full flex-1 resize-none border-2 border-black rounded-xl px-4 py-2 border-opacity-30' placeholder='Your Good Name...' />
+                    <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-Fugaz'>Discuss your potential idea</h2>
+                    <input type="text" className='w-full font-poppins bg-[#f4f4f4] rounded-xl px-4 py-2' placeholder='Your Good Name...' />
+                    <input type="text" className='w-full font-poppins bg-[#f4f4f4] rounded-xl px-4 py-2' placeholder='Your Contact email...' />
+                    <textarea type="text" className='w-full flex-1 resize-none rounded-xl px-4 py-2 bg-[#f4f4f4] font-poppins' placeholder='Type Your Message here...' />
                     <button className='bg-accent text-white md:text-[1rem] text-[0.8rem] font-bold md:px-10 px-4  md:py-4 py-2 rounded-xl border-2 border-accent'>
                         Submit
                     </button>
                 </div>
-                <div className='flex-1 shadow-xl rounded-xl'>
+                {/* <div className='flex-1 shadow-xl rounded-xl'>
                     here will be something that triggers customer's emotion to contact me
-                </div>
+                </div> */}
             </div>
         </motion.div>
     )

@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         nunito: ["Nunito", "sans-serif"],
+        Fugaz: ["Fugaz", "sans-serif"],
       },
     },
     colors: {

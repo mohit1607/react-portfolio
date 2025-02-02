@@ -4,13 +4,18 @@
 
 @font-face {
   font-family: Nunito;
-  src: url("./assets/fonts/Nunito/Nunito-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Nunito/Nunito-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
   font-family: Poppins;
   src: url("./assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: Fugaz;
+  src: url("./assets/fonts/Fugaz/FugazOne-Regular.ttf") format("truetype");
 }
 
 .bg-feathers {
