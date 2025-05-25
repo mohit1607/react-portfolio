@@ -39,7 +39,7 @@ const Skills = () => {
             transition={{ duration: 0.5 }}
             className='w-full relative px-[3%] sm:px-[10%] overflow-hidden max-w-[1400px] flex flex-col justify-start items-center py-12 gap-8'>
             <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito'>Skills</h2>
-            <div className='w-full flex flex-wrap justify-center md:justify-start items-center gap-10'>
+            <div className='w-full flex flex-wrap justify-center items-center gap-10'>
                 {
                     skillsData.map(curr => (
                         <SkillsCard

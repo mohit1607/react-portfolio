@@ -23,7 +23,7 @@ const ProofOfWork = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }} // Trigger when 20% is visible, only once
             transition={{ duration: 0.3 }}
-            className='w-full mt-[5rem] mb-[10rem] flex flex-col px-[3%] sm:px-[10%] max-w-[1400px]'>
+            className='w-full mt-[5rem] mb-[5rem] flex flex-col px-[3%] sm:px-[10%] max-w-[1400px]'>
             <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito mb-12'>Work (antiques)</h2>
 
             {/* Button Group for Mobile */}

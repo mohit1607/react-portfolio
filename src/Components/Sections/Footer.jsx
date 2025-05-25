@@ -20,7 +20,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className='px-[3%] sm:px-[10%] w-full mt-[10rem] mb-[5rem] max-w-[1400px]'>
+    <footer className='px-[3%] sm:px-[10%] w-full mt-[5rem] mb-[5rem] max-w-[1400px]'>
       {/* Animated @Mohit Ashliya Text with Viewport Trigger */}
       <motion.h3
         className='font-poppins text-center text-[#888888] font-bold text-[5rem] sm:text-[8rem] mb-[3rem]'

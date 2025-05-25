@@ -12,6 +12,10 @@
   src: url("./assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: Opensans;
+  src: url("./assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf");
+}
 
 @font-face {
   font-family: Fugaz;
@@ -67,3 +71,5 @@ html.lenis body {
 .d3d {
   transform-style: preserve-3d;
 }
+
+

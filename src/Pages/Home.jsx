@@ -10,6 +10,7 @@ import logo from '../assets/images/opaquelogo.png'
 // import Navbar from "../Components/Navbar";
 import Skills from '../Components/Sections/Homepage/Skills'
 import Form from '../Components/Sections/Homepage/Form'
+import PatternStripe from '../Components/PatternStripe'
 // import BlobCursor from '../Components/BlobCursor'
 
 export const Home = () => {
@@ -22,12 +23,18 @@ export const Home = () => {
       <Hero />
       {/* <BusinessCard/>  */}
       <Skills />
+      <PatternStripe />
       <ProofOfWork />
+      <PatternStripe />
       <Testimonials />
+      <PatternStripe />
       <About />
+      <PatternStripe />
       <Form />
       {/* <ArtGallary /> */}
+      <PatternStripe />
       <Footer />
+      <PatternStripe />
       {/* <Navbar active={active} setActive={setActive} /> */}
     </div>
   )
