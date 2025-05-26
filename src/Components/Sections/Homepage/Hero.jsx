@@ -2,8 +2,12 @@ import { AiFillMediumSquare } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { githubURL, linkedinURL, xURL } from "../../../../constants";
 
-const Hero = () => {
+const Hero = ({
+  getStarted = () => { },
+  exploreWork = () => { },
+}) => {
   const getRandomPosition = (range = 30) => ({
     x: Math.random() * range - range / 2,
     y: Math.random() * range - range / 2,
@@ -13,22 +17,22 @@ const Hero = () => {
     {
       component: <BsTwitter color="#2523F0" size={24} />,
       initial: getRandomPosition(),
-      href: "https://twitter.com"
+      href: xURL
     },
-    {
-      component: <AiFillMediumSquare color="#2523F0" size={24} />,
-      initial: getRandomPosition(),
-      href: "https://medium.com"
-    },
+    // {
+    //   component: <AiFillMediumSquare color="#2523F0" size={24} />,
+    //   initial: getRandomPosition(),
+    //   href: "https://medium.com"
+    // },
     {
       component: <FaLinkedinIn color="#2523F0" size={24} />,
       initial: getRandomPosition(),
-      href: "https://linkedin.com"
+      href: linkedinURL
     },
     {
       component: <FaGithub color="#2523F0" size={24} />,
       initial: getRandomPosition(),
-      href: "https://github.com"
+      href: githubURL
     }
   ];
 
@@ -59,6 +63,7 @@ const Hero = () => {
               transition: { duration: 0.5, ease: "easeInOut" },
             }}
             animate={{ x: 0 }}
+            onClick={getStarted}
             className='bg-accent text-white font-bold font-poppins text-[0.8rem] md:text-[1rem] px-4 md:px-10 py-2 md:py-4 rounded-xl border-2 border-accent'
           >
             Contact
@@ -69,6 +74,7 @@ const Hero = () => {
               y: [0, -10, 10, -10, 10, 0],
               transition: { duration: 0.5, ease: "easeInOut" },
             }}
+            onClick={exploreWork}
             animate={{ y: 0 }}
             className='bg-white text-accent font-bold font-poppins text-[0.8rem] md:text-[1rem] px-4 md:px-10 py-2 md:py-4 rounded-xl border-2 border-accent'
           >

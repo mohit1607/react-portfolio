@@ -4,6 +4,7 @@ import React from 'react'
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import person from '../../../assets/images/archperson.jpg'
 import { motion, useScroll, useTransform } from "motion/react";
+import { xURL, githubURL, linkedinURL } from "../../../../constants";
 
 const About = () => {
 
@@ -26,16 +27,16 @@ const About = () => {
         Lorem ipsum dolor sit amet consectetur. Etiam aliquam vel dolor accumsan nisi bibendum turpis habitant vulputate. Eleifend habitant et convallis eget nisi amet enim. Lorem purus mattis egestas pretium magna. Vivamus felis luctus nam adipiscing nascetur volutpat sed etiam mollis.
       </p>
       <div className='flex gap-4 mt-4 font-nunito'>
-        <a href="">
+        <a href={xURL}>
           <BsTwitter color="black" size={32} />
         </a>
-        <a href="">
+        {/* <a href="">
           <AiFillMediumSquare color="black" size={32} />
-        </a>
-        <a href="">
+        </a> */}
+        <a href={linkedinURL}>
           <FaLinkedinIn color="black" size={32} />
         </a>
-        <a href="">
+        <a href={githubURL}>
           <FaGithub color="black" size={32} />
         </a>
       </div>
