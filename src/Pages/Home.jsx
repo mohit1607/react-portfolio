@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import Hero from '../Components/Sections/Homepage/Hero'
 import Testimonials from '../Components/Sections/Homepage/Testimonials'
 import About from '../Components/Sections/Homepage/About'
@@ -8,6 +8,7 @@ import Skills from '../Components/Sections/Homepage/Skills'
 import Form from '../Components/Sections/Homepage/Form'
 import logo from '../assets/images/opaquelogo.png'
 import ProjectCards from '../Components/Sections/Homepage/ProjectCards'
+import PatternStripe from '../Components/PatternStripe'
 
 export const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -90,11 +91,12 @@ export const Home = () => {
           exploreWork={() => scrollToSection(proofRef)}
         />
       </section>
-      <section ref={skillsRef}><Skills /></section>
-      {/* <section ref={proofRef}><ProofOfWork /></section> */}
+      <PatternStripe></PatternStripe>
       <section ref={proofRef}><ProjectCards /></section>
       <section ref={testimonialsRef}><Testimonials /></section>
+      {/* <section ref={proofRef}><ProofOfWork /></section> */}
       <section ref={aboutRef}><About /></section>
+      <section ref={skillsRef}><Skills /></section>
       <section ref={formRef}><Form /></section>
       <Footer />
     </div>

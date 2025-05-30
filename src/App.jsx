@@ -27,10 +27,10 @@ function App() {
 
 
   return (
-    <div className='w-full relative'>
+    <div id='main' className='w-full relative'>
       <Routes>
         {/* this website is future proof I will deploy it on vps */}
-        <Route path='/' element={<Home/>} />
+        <Route path='/' element={<Home />} />
       </Routes>
     </div>
   )

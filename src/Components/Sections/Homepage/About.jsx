@@ -10,7 +10,7 @@ const About = () => {
     <div
       className='w-full py-[5rem] px-[3%] md:px-[10%] flex flex-col items-center max-w-[1400px]'>
 
-      <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito mb-12'>About Me</h2>
+      {/* <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito mb-12'>About Me</h2> */}
 
       {/* Main content container - side by side layout */}
       <div className='w-full flex flex-col lg:flex-row gap-12 lg:gap-12 items-center'>

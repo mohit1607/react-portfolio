@@ -1,17 +1,55 @@
-import { AiFillMediumSquare } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { githubURL, linkedinURL, xURL } from "../../../../constants";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
 
 const Hero = ({
   getStarted = () => { },
   exploreWork = () => { },
 }) => {
+
+  const [readyAnimate, setReadyAnimate] = useState(false);
+
+
   const getRandomPosition = (range = 30) => ({
     x: Math.random() * range - range / 2,
     y: Math.random() * range - range / 2,
   });
+
+  const heroText = useRef(null)
+
+  useEffect(() => {
+    let text = heroText.current.textContent;
+    // console.log(text)
+    text = text.split("")
+    let n = text.length
+    heroText.current.innerHTML = text.map((letter, index) => {
+      if (letter === " ") return `<span class="heroText inline-block">&nbsp;</span>`;
+
+      if (index < n / 2) return `<span class="heroText inline-block">${letter}</span>`;
+      else return `<span class="heroText2 inline-block">${letter}</span>`;
+    }).join("")
+    setReadyAnimate(true)
+
+  }, [])
+
+  useGSAP(() => {
+    gsap.from(".heroText", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.1
+    })
+    gsap.from(".heroText2", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: -0.1
+    })
+  }, { dependencies: [readyAnimate], scope: '#main' })
 
   const icons = [
     {
@@ -37,17 +75,17 @@ const Hero = ({
   ];
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.5 }}
-      className='w-full px-4 py-24 flex justify-center items-center'
+    <section
+      // initial={{ opacity: 0, y: 50 }}
+      // whileInView={{ opacity: 1, y: 0 }}
+      // viewport={{ once: true, amount: 0.2 }}
+      // transition={{ duration: 0.5 }}
+      className='w-full px-4 pt-24 flex justify-center items-center'
     >
       <div className='max-w-[1200px] w-full   bg-white background_pattern rounded-2xl p-10 flex flex-col items-center justify-center text-center gap-6'>
         <h1 className='select-none font-Fugaz font-bold text-[1.5rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] w-[80%]'>
-          <span className='text-accent'>Your Vision </span>
-          My Code Bringing Ideas to Life
+          <span ref={heroText} className='text-accent'>Your Vision My Code </span>
+          Bringing Ideas to Life
         </h1>
 
         {/* CTA Buttons */}
@@ -105,7 +143,7 @@ const Hero = ({
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

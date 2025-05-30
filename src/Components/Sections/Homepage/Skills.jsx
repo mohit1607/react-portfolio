@@ -1,4 +1,3 @@
-import React from 'react'
 import SkillsCard from '../../Cards/SkillsCard'
 import { motion } from 'motion/react'
 import blender from '../../../assets/images/skills/blender.png'
@@ -32,11 +31,7 @@ const Skills = () => {
     ];
 
     return (
-        <motion.section
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }} // Trigger when 20% is visible, only once
-            transition={{ duration: 0.5 }}
+        <section
             className='w-full relative px-[3%] sm:px-[10%] overflow-hidden max-w-[1400px] flex flex-col justify-start items-center py-12 gap-8'>
             <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito'>Skills</h2>
             <div className='w-full flex flex-wrap justify-center items-center gap-10'>
@@ -50,7 +45,7 @@ const Skills = () => {
                     ))
                 }
             </div>
-        </motion.section>
+        </section>
     )
 }
 
