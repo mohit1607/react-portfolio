@@ -3,6 +3,8 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Home from './Pages'
 import Lenis from 'lenis'
+import ProjectPage from './Pages/ProjectPage'
+import Error404 from './404Error'
 
 function App() {
 
@@ -31,6 +33,8 @@ function App() {
       <Routes>
         {/* this website is future proof I will deploy it on vps */}
         <Route path='/' element={<Home />} />
+        <Route path='/project' element={<ProjectPage />} />
+        <Route path='*' element={<Error404 />} />
       </Routes>
     </div>
   )

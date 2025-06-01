@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { xURL, githubURL, linkedinURL } from '../../../constants';
+import resume from '../../assets/resume.pdf'
 
 const Footer = () => {
   const textVariants = {
@@ -20,7 +21,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className='px-[3%] sm:px-[10%] background_pattern w-full mt-[5rem] mb-[5rem] max-w-[1400px]'>
+    <footer className='px-[3%] sm:px-[10%]  w-full mt-[5rem] mb-[5rem] max-w-[1400px]'>
       <motion.h3
         className='font-poppins text-center text-[#888888] font-bold text-[5rem] sm:text-[8rem] mb-[3rem]'
         variants={textVariants}
@@ -34,8 +35,8 @@ const Footer = () => {
       <div className='w-full flex flex-col md:flex-row flex-wrap justify-center lg:justify-between mb-[15px]'>
         <div className='flex gap-[25px] flex-wrap'>
           <a href={githubURL} className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Hire me</a>
-          <a href="" className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Insights</a>
-          <a href="public/resume.pdf" target='_blank' className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Resume</a>
+          {/* <a href="" className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Insights</a> */}
+          <a href={resume} target='_blank' className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>Resume</a>
         </div>
         <div className='flex gap-[25px] flex-wrap'>
           <a href={xURL} className='text-[24px] font-poppins font-semibold cursor-pointer hover:underline'>X (twitter)</a>

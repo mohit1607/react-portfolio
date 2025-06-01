@@ -4,76 +4,80 @@ import 'react-toastify/dist/ReactToastify.css'
 import zenpattern from '../../../assets/images/zenpattern.jpg'
 
 const Form = () => {
-  // Form state
   const [formName, setFormName] = useState('')
   const [formEmail, setFormEmail] = useState('')
   const [formMessage, setFormMessage] = useState('')
 
-  // Validation helpers
   const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email)
 
-  // Handle submit
   const handleSubmitForm = () => {
-    if (!formName.trim()) return toast.error('Please enter your name.')
-    if (!isValidEmail(formEmail)) return toast.error('Please enter a valid email.')
-    if (!formMessage.trim()) return toast.error('Please enter a message.')
+    if (!formName.trim()) return toast.error('Please enter your name.', {
+      position: "top-center"
+    })
+    if (!isValidEmail(formEmail)) return toast.error('Please enter a valid email.', {
+      position: "top-center"
+    })
+    if (!formMessage.trim()) return toast.error('Please enter a message.', {
+      position: "top-center"
+    })
 
-    // TODO: Integrate API call here
+    toast.success('Form submitted successfully!', {
+      position: "top-center"
+    })
 
-    toast.success('Form submitted successfully!')
-
-    // Clear inputs
     setFormName('')
     setFormEmail('')
     setFormMessage('')
   }
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${zenpattern})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      <ToastContainer position="top-right" autoClose={3000} />
+    <div className="h-screen w-full flex flex-col md:flex-row">
+      {/* Left Side: Background image only on desktop */}
       <div
-        className="w-full relative px-[3%] sm:px-[5%] overflow-hidden max-w-[1400px] flex flex-col items-center py-12">
-        {/* Form container */}
-        <div className="flex justify-center w-full">
-          <div className="p-2 rounded-2xl w-full max-w-[50rem]">
-            <div className="h-[30rem] rounded-xl p-8 shadow-xl w-full flex flex-col gap-3 bg-white">
-              <h2 className="text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-Fugaz">
-                Discuss your potential idea
-              </h2>
-              <input
-                type="text"
-                value={formName}
-                onChange={(e) => setFormName(e.target.value)}
-                className="w-full font-poppins rounded-xl px-4 py-2 shadow-[inset_4px_-3px_35px_3px_rgba(0,_0,_0,_0.1)] focus:outline-none focus:border-accent"
-                placeholder="Your Good Name..."
-              />
-              <input
-                type="text"
-                value={formEmail}
-                onChange={(e) => setFormEmail(e.target.value)}
-                className="w-full font-poppins rounded-xl px-4 py-2 shadow-[inset_4px_-3px_35px_3px_rgba(0,_0,_0,_0.1)] focus:outline-none focus:border-accent"
-                placeholder="Your Contact email..."
-              />
-              <textarea
-                value={formMessage}
-                onChange={(e) => setFormMessage(e.target.value)}
-                className="w-full flex-1 resize-none rounded-xl px-4 py-2 font-poppins shadow-[inset_4px_-3px_35px_3px_rgba(0,_0,_0,_0.1)] focus:outline-none focus:border-accent"
-                placeholder="Type Your Message here..."
-              />
-              <button
-                onClick={handleSubmitForm}
-                className="bg-accent text-white md:text-[1rem] text-[0.8rem] font-bold md:px-10 px-4 md:py-4 py-2 rounded-xl border-2 border-accent"
-              >
-                Submit
-              </button>
-            </div>
+        className="hidden md:block w-1/2 h-full bg-cover bg-center"
+        style={{ backgroundImage: `url(${zenpattern})` }}
+      ></div>
+
+      {/* Form Side with background image on all screens */}
+      <div
+        className="relative w-full md:w-1/2 h-full flex items-center justify-center px-6 py-12 bg-cover bg-center"
+        style={{ backgroundImage: `url(${zenpattern})` }}
+      >
+        {/* Overlay: slightly transparent on mobile, solid white on desktop */}
+        <div className="absolute inset-0 bg-white bg-opacity-70 md:bg-opacity-100 z-0"></div>
+
+        <div className="relative z-10 w-full max-w-[35rem] p-2 metallic-border">
+          <ToastContainer position="top-right" autoClose={3000} />
+          <div className="min-h-[30rem] rounded-xl p-8 shadow-xl w-full flex flex-col gap-4 bg-white bg-opacity-90">
+            <h2 className="text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-Fugaz">
+              Discuss your potential idea
+            </h2>
+            <input
+              type="text"
+              value={formName}
+              onChange={(e) => setFormName(e.target.value)}
+              className="w-full border-primary border-2 font-poppins rounded-xl px-4 py-2 focus:border-accent"
+              placeholder="Your Good Name..."
+            />
+            <input
+              type="email"
+              value={formEmail}
+              onChange={(e) => setFormEmail(e.target.value)}
+              className="w-full border-primary border-2 font-poppins rounded-xl px-4 py-2 focus:outline-none focus:border-accent"
+              placeholder="Your Contact email..."
+            />
+            <textarea
+              value={formMessage}
+              onChange={(e) => setFormMessage(e.target.value)}
+              className="w-full flex-grow border-2 border-primary resize-none rounded-xl px-4 py-2 font-poppins focus:outline-none focus:border-accent"
+              placeholder="Type Your Message here..."
+            />
+            <button
+              onClick={handleSubmitForm}
+              className="bg-accent text-white md:text-[1rem] text-[0.8rem] font-bold md:px-10 px-4 md:py-4 py-2 rounded-xl border-2 border-accent"
+            >
+              Submit
+            </button>
           </div>
         </div>
       </div>

@@ -5,10 +5,10 @@ import { githubURL, linkedinURL, xURL } from "../../../../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
+import resume from "../../../assets/resume.pdf"
 
 const Hero = ({
   getStarted = () => { },
-  exploreWork = () => { },
 }) => {
 
   const [readyAnimate, setReadyAnimate] = useState(false);
@@ -80,10 +80,9 @@ const Hero = ({
       // whileInView={{ opacity: 1, y: 0 }}
       // viewport={{ once: true, amount: 0.2 }}
       // transition={{ duration: 0.5 }}
-      className='w-full px-4 pt-24 flex justify-center items-center'
-    >
+      className='w-full px-4 pt-24 flex justify-center items-center'>
       <div className='max-w-[1200px] w-full   bg-white background_pattern rounded-2xl p-10 flex flex-col items-center justify-center text-center gap-6'>
-        <h1 className='select-none font-Fugaz font-bold text-[1.5rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] w-[80%]'>
+        <h1 className='select-none font-Fugaz font-bold text-[1.5rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] w-full md:w-[80%]'>
           <span ref={heroText} className='text-accent'>Your Vision My Code </span>
           Bringing Ideas to Life
         </h1>
@@ -97,7 +96,7 @@ const Hero = ({
         >
           <motion.button
             whileHover={{
-              x: [0, -10, 10, -10, 10, 0],
+              y: [0, -10, 10, -10, 10, 0],
               transition: { duration: 0.5, ease: "easeInOut" },
             }}
             animate={{ x: 0 }}
@@ -107,17 +106,28 @@ const Hero = ({
             Contact
           </motion.button>
 
-          <motion.button
+          <motion.a
+            href={resume}
             whileHover={{
               y: [0, -10, 10, -10, 10, 0],
               transition: { duration: 0.5, ease: "easeInOut" },
             }}
-            onClick={exploreWork}
+            // onClick={exploreWork}
             animate={{ y: 0 }}
-            className='bg-white text-accent font-bold font-poppins text-[0.8rem] md:text-[1rem] px-4 md:px-10 py-2 md:py-4 rounded-xl border-2 border-accent'
+            className='bg-white text-accent font-bold font-poppins text-[0.8rem] md:text-[1rem] px-4 md:px-10 py-2 md:py-4 rounded-xl border-2 border-accent flex gap-1'
           >
-            Explore work
-          </motion.button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+            </svg>
+            Resume
+          </motion.a>
         </motion.div>
 
         {/* Social Icons */}

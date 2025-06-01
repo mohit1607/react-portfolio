@@ -8,7 +8,8 @@ import Skills from '../Components/Sections/Homepage/Skills'
 import Form from '../Components/Sections/Homepage/Form'
 import logo from '../assets/images/opaquelogo.png'
 import ProjectCards from '../Components/Sections/Homepage/ProjectCards'
-import PatternStripe from '../Components/PatternStripe'
+// import PatternStripe from '../Components/PatternStripe'
+import resume from '../assets/resume.pdf'
 
 export const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -39,7 +40,8 @@ export const Home = () => {
       {/* Burger Icon */}
       <div
         className='fixed w-12 h-12 top-8 right-8 z-50 cursor-pointer flex items-center justify-center'
-        onClick={() => setMenuOpen(!menuOpen)}
+        onMouseEnter={() => setMenuOpen(true)}
+        onMouseLeave={() => setMenuOpen(false)}
       >
         <div className='relative w-8 h-6'>
           <span className={`absolute h-1 w-8 bg-black rounded transition-all duration-300 ease-in-out ${menuOpen ? 'rotate-45 top-2.5' : 'top-0'}`} />
@@ -50,20 +52,22 @@ export const Home = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out 
+          ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        onMouseEnter={() => setMenuOpen(true)}
+        onMouseLeave={() => setMenuOpen(false)}
       >
         <ul className="flex flex-col gap-6 mt-24 ml-8 text-lg font-medium">
           <li className="cursor-pointer" onClick={() => scrollToSection(heroRef)}>Home</li>
           <li className="cursor-pointer" onClick={() => scrollToSection(skillsRef)}>Skills</li>
           <li className="cursor-pointer" onClick={() => scrollToSection(proofRef)}>Proof of Work</li>
-          <li className="cursor-pointer" onClick={() => scrollToSection(testimonialsRef)}>Testimonials</li>
+          {/* <li className="cursor-pointer" onClick={() => scrollToSection(testimonialsRef)}>Testimonials</li> */}
           <li className="cursor-pointer" onClick={() => scrollToSection(aboutRef)}>About</li>
           <li className="cursor-pointer" onClick={() => scrollToSection(formRef)}>Contact</li>
 
           <li>
             <a
-              href="/resume.pdf"
+              href={resume}
               download
               className="inline-flex text-sm items-center mt-4 px-4 py-2 bg-accent text-white rounded-lg hover:bg-gray-800 transition duration-200"
             >
@@ -81,23 +85,20 @@ export const Home = () => {
             </a>
           </li>
         </ul>
-
       </div>
 
       {/* Sections with refs */}
       <section ref={heroRef}>
         <Hero
           getStarted={() => scrollToSection(formRef)}
-          exploreWork={() => scrollToSection(proofRef)}
         />
       </section>
-      <PatternStripe></PatternStripe>
-      <section ref={proofRef}><ProjectCards /></section>
-      <section ref={testimonialsRef}><Testimonials /></section>
-      {/* <section ref={proofRef}><ProofOfWork /></section> */}
       <section ref={aboutRef}><About /></section>
+      <section ref={proofRef}><ProjectCards /></section>
+      {/* <section ref={testimonialsRef}><Testimonials /></section> */}
+      {/* <section ref={proofRef}><ProofOfWork /></section> */}
       <section ref={skillsRef}><Skills /></section>
-      <section ref={formRef}><Form /></section>
+      <section className='w-full' ref={formRef}><Form /></section>
       <Footer />
     </div>
   )
