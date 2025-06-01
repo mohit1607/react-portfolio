@@ -30,7 +30,7 @@ const About = () => {
             <img className='w-full h-full object-cover' src={person} alt="person" />
           </div>
           {/* Chakra image behind the person */}
-          <div className="absolute top-1/2 md:left-1/2 bg-accent  md:top-4 w-[20rem] h-[20rem] md:w-[30rem] md:h-[30rem] lg:w-[40rem] lg:h-[40rem] chakra -z-10 overflow-hidden">
+          <div className="absolute top-1/2 md:left-1/2 md:top-4 w-[20rem] h-[20rem] md:w-[30rem] md:h-[30rem] lg:w-[40rem] lg:h-[40rem] chakra -z-10 overflow-hidden">
             <img src={chakra} alt="mandala" className="w-full h-full object-cover" />
           </div>
         </div>
