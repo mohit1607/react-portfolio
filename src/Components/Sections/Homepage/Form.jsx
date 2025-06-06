@@ -34,7 +34,7 @@ const Form = () => {
     <div className="h-screen w-full flex flex-col md:flex-row">
       {/* Left Side: Background image only on desktop */}
       <div
-        className="hidden md:block w-1/2 h-full bg-cover bg-center"
+        className="hidden md:block w-1/2 h-full bg-cover bg-center rounded-r-2xl border-2 border-primary"
         style={{ backgroundImage: `url(${zenpattern})` }}
       ></div>
 

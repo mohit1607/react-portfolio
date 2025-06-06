@@ -56,14 +56,17 @@ export const Home = () => {
           ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         onMouseEnter={() => setMenuOpen(true)}
         onMouseLeave={() => setMenuOpen(false)}
+        onClick={() => {
+          menuOpen && setMenuOpen(false)
+        }}
       >
         <ul className="flex flex-col gap-6 mt-24 ml-8 text-lg font-medium">
-          <li className="cursor-pointer" onClick={() => scrollToSection(heroRef)}>Home</li>
-          <li className="cursor-pointer" onClick={() => scrollToSection(skillsRef)}>Skills</li>
-          <li className="cursor-pointer" onClick={() => scrollToSection(proofRef)}>Proof of Work</li>
-          {/* <li className="cursor-pointer" onClick={() => scrollToSection(testimonialsRef)}>Testimonials</li> */}
-          <li className="cursor-pointer" onClick={() => scrollToSection(aboutRef)}>About</li>
-          <li className="cursor-pointer" onClick={() => scrollToSection(formRef)}>Contact</li>
+          <li className="cursor-pointer hover:font-bold" onClick={() => scrollToSection(heroRef)}>Home</li>
+          <li className="cursor-pointer hover:font-bold" onClick={() => scrollToSection(skillsRef)}>Skills</li>
+          <li className="cursor-pointer hover:font-bold" onClick={() => scrollToSection(proofRef)}>Proof of Work</li>
+          {/* <li className="cursor-pointer hover:font-bold" onClick={() => scrollToSection(testimonialsRef)}>Testimonials</li> */}
+          <li className="cursor-pointer hover:font-bold" onClick={() => scrollToSection(aboutRef)}>About</li>
+          <li className="cursor-pointer hover:font-bold" onClick={() => scrollToSection(formRef)}>Contact</li>
 
           <li>
             <a
@@ -88,7 +91,7 @@ export const Home = () => {
       </div>
 
       {/* Sections with refs */}
-      <section ref={heroRef}>
+      <section className='w-full' ref={heroRef}>
         <Hero
           getStarted={() => scrollToSection(formRef)}
         />
