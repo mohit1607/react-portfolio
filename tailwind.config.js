@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -17,6 +18,7 @@ export default {
       secondary: '#0B2D9C',
       accent: '#2523F0',
       white: '#ffffff',
+      darkprimary: '#111111',
       black: '#000'
     }
   },

@@ -33,7 +33,7 @@ const Skills = () => {
     return (
         <section
             className='w-full relative px-[3%] sm:px-[10%] overflow-hidden max-w-[1400px] flex flex-col justify-start items-center py-12 gap-8 mb-4'>
-            <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito'>Skills</h2>
+            <h2 className='text-[1.7rem] sm:text-[2.1rem] text-center font-semibold font-nunito dark:text-white'>Skills</h2>
             <div className='w-full flex flex-wrap justify-center items-center gap-10'>
                 {
                     skillsData.map(curr => (

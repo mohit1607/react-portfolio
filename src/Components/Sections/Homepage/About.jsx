@@ -8,6 +8,7 @@ import gsap from "gsap";
 
 const About = () => {
 
+
   useGSAP(() => {
     gsap.to('.chakra', {
       duration: 20,
@@ -17,6 +18,8 @@ const About = () => {
       rotation: 360
     });
   }, { dependencies: [], scope: '#main' });
+
+
 
   return (
     <div
@@ -31,22 +34,26 @@ const About = () => {
           </div>
           {/* Chakra image behind the person */}
           <div className="absolute top-1/2 md:left-1/2 md:top-4 w-[20rem] h-[20rem] md:w-[30rem] md:h-[30rem] lg:w-[40rem] lg:h-[40rem] chakra -z-10 overflow-hidden">
-            <img src={chakra} alt="mandala" className="w-full h-full object-cover" />
+            <img
+              src={chakra}
+              alt="mandala"
+              className="w-full h-full object-cover opacity-60 dark:opacity-100 dark:brightness-150"
+            />
           </div>
         </div>
 
         {/* Right side - Information */}
         <div className='w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left'>
-          <h2 className='sm:text-[3rem] text-[1.5rem] font-bold sm:font-semibold mb-[15px] font-Fugaz'>
+          <h2 className='sm:text-[3rem] dark:text-white text-[1.5rem] font-bold sm:font-semibold mb-[15px] font-Fugaz'>
             MOHIT ASHLIYA
           </h2>
-          <p className='text-[0.8rem] font-semibold leading-relaxed sm:text-[1rem] w-full lg:w-[90%] mb-6'>
+          <p className='text-[0.8rem] dark:text-white font-semibold leading-relaxed sm:text-[1rem] w-full lg:w-[90%] mb-6'>
             I build reliable, user-friendly apps using React, React Native, and FastAPI. I focus on creating smooth experiences that help businesses grow. Let’s turn your ideas into powerful, easy-to-use solutions.
           </p>
           <div className='flex gap-4 font-nunito'>
-            <a href={xURL}><BsTwitter color="black" size={32} /></a>
-            <a href={linkedinURL}><FaLinkedinIn color="black" size={32} /></a>
-            <a href={githubURL}><FaGithub color="black" size={32} /></a>
+            <a href={xURL}><BsTwitter color={'black'} size={32} /></a>
+            <a href={linkedinURL}><FaLinkedinIn color={'black'} size={32} /></a>
+            <a href={githubURL}><FaGithub color={'black'} size={32} /></a>
           </div>
         </div>
 

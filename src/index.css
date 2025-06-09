@@ -73,3 +73,22 @@ html.lenis body {
 }
 
 
+@layer utilities {
+  .bg-fade-bottom {
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        transparent 75%,
+        rgba(255, 255, 255, 0.2) 80%,
+        rgba(255, 255, 255, 0.6) 90%,
+        rgba(255, 255, 255, 1) 100%);
+  }
+
+  .dark-bg-fade-bottom {
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        transparent 75%,
+        rgba(17, 17, 17, 0.2) 80%,
+        rgba(17, 17, 17, 0.6) 90%,
+        #111 100%);
+  }
+}

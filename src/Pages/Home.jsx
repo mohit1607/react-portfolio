@@ -10,6 +10,7 @@ import logo from '../assets/images/opaquelogo.png'
 import ProjectCards from '../Components/Sections/Homepage/ProjectCards'
 // import PatternStripe from '../Components/PatternStripe'
 import resume from '../assets/resume.pdf'
+import ThemeToggle from '../features/ThemeToggle'
 
 export const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -30,24 +31,27 @@ export const Home = () => {
   }
 
   return (
-    <div className='w-full relative flex flex-col items-center'>
+    <div className='w-full relative flex flex-col items-center dark:bg-darkprimary'>
 
       {/* Logo */}
       <div className='fixed w-12 h-12 top-8 left-8 z-50'>
         <img src={logo} alt="Logo" />
       </div>
 
-      {/* Burger Icon */}
-      <div
-        className='fixed w-12 h-12 top-8 right-8 z-50 cursor-pointer flex items-center justify-center'
-        onMouseEnter={() => setMenuOpen(true)}
-        onMouseLeave={() => setMenuOpen(false)}
-      >
-        <div className='relative w-8 h-6'>
-          <span className={`absolute h-1 w-8 bg-black rounded transition-all duration-300 ease-in-out ${menuOpen ? 'rotate-45 top-2.5' : 'top-0'}`} />
-          <span className={`absolute h-1 w-8 bg-black rounded transition-all duration-300 ease-in-out ${menuOpen ? 'opacity-0' : 'top-2.5'}`} />
-          <span className={`absolute h-1 w-8 bg-black rounded transition-all duration-300 ease-in-out ${menuOpen ? '-rotate-45 top-2.5' : 'top-5'}`} />
+      <div className='fixed top-11 right-8 z-50 flex items-center justify-center gap-4'>
+        {/* Burger Icon */}
+        <div
+          className='cursor-pointer flex items-center justify-center'
+          onMouseEnter={() => setMenuOpen(true)}
+          onMouseLeave={() => setMenuOpen(false)}
+        >
+          <div className='relative w-8 h-6'>
+            <span className={`absolute h-1 w-8 bg-black rounded transition-all duration-300 ease-in-out ${menuOpen ? 'rotate-45 top-2.5' : 'top-0'}`} />
+            <span className={`absolute h-1 w-8 bg-black rounded transition-all duration-300 ease-in-out ${menuOpen ? 'opacity-0' : 'top-2.5'}`} />
+            <span className={`absolute h-1 w-8 bg-black rounded transition-all duration-300 ease-in-out ${menuOpen ? '-rotate-45 top-2.5' : 'top-5'}`} />
+          </div>
         </div>
+        <ThemeToggle />
       </div>
 
       {/* Sidebar */}

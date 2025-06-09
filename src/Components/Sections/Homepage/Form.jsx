@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa'
 import zenpattern from '../../../assets/images/zenpattern.jpg'
 
 const Form = () => {
@@ -28,6 +29,25 @@ const Form = () => {
     setFormName('')
     setFormEmail('')
     setFormMessage('')
+  }
+
+  const handleWhatsApp = () => {
+    const phoneNumber = '+918003321811' // Replace with your WhatsApp number
+    const message = 'Hi! I would like to discuss a potential project with you.'
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(whatsappURL, '_blank')
+  }
+
+  const handlePhone = () => {
+    const phoneNumber = '+918003321811' // Replace with your phone number
+    window.location.href = `tel:${phoneNumber}`
+  }
+
+  const handleEmail = () => {
+    const email = 'mohit.ashliya@gmail.com' // Replace with your email
+    const subject = 'Project Discussion'
+    const body = 'Hi Mohit,\n\nI would like to discuss a potential project with you.\n\nBest regards'
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
 
   return (
@@ -69,7 +89,7 @@ const Form = () => {
             <textarea
               value={formMessage}
               onChange={(e) => setFormMessage(e.target.value)}
-              className="w-full flex-grow border-2 border-primary resize-none rounded-xl px-4 py-2 font-poppins focus:outline-none focus:border-accent"
+              className="w-full flex-grow h-[6rem] border-2 border-primary resize-none rounded-xl px-4 py-2 font-poppins focus:outline-none focus:border-accent"
               placeholder="Type Your Message here..."
             />
             <button
@@ -78,6 +98,35 @@ const Form = () => {
             >
               Submit
             </button>
+            
+            {/* Contact Icons Section */}
+            <div className="flex justify-center gap-6 pt-4">
+              <button
+                onClick={handleWhatsApp}
+                className="p-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors duration-300 transform hover:scale-110"
+                title="Contact via WhatsApp"
+              >
+                <FaWhatsapp color="black" size={25} />
+              </button>
+              <button
+                onClick={handlePhone}
+                className="p-3 rounded-full bg-blue-500 hover:bg-blue-600 transition-colors duration-300 transform hover:scale-110"
+                title="Call directly"
+              >
+                <FaPhone color="black" size={25} />
+              </button>
+              <button
+                onClick={handleEmail}
+                className="p-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors duration-300 transform hover:scale-110"
+                title="Send email"
+              >
+                <FaEnvelope color="black" size={25} />
+              </button>
+            </div>
+            
+            <p className="text-center text-sm text-gray-600 font-poppins">
+              Or reach out directly using the options above
+            </p>
           </div>
         </div>
       </div>

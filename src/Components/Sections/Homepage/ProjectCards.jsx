@@ -33,7 +33,7 @@ const projects = [
 const ProjectCardGrid = () => {
     return (
         <div className="w-full py-12 px-4 max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
+            <h2 className="text-3xl font-bold text-center mb-8 dark:text-white">Projects</h2>
             <div className="flex flex-wrap justify-center gap-6">
                 {projects.map((project, idx) => (
                     <div

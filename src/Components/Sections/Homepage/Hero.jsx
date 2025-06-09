@@ -69,12 +69,16 @@ const Hero = ({ getStarted = () => { } }) => {
   ];
 
   return (
-    <section className="w-full h-screen flex justify-center background_pattern items-center">
-      <div className="max-w-[1200px] w-full rounded-2xl p-10 flex flex-col items-center justify-center text-center gap-4">
+    <section className="relative w-full bg-white dark:bg-darkprimary h-screen flex justify-center background_pattern_dark items-center">
+      {/* Gradient Overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none bg-fade-bottom dark:dark-bg-fade-bottom" />
+
+      <div className="relative z-10 max-w-[1200px] w-full rounded-2xl p-10 flex flex-col items-center justify-center text-center gap-4">
         <h1 className="select-none font-Fugaz font-bold text-[2.5rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[5rem] text-balance leading-tight whitespace-nowrap max-w-[95vw] md:max-w-[80vw] overflow-hidden">
           <span ref={heroText} className="text-accent">Build fast! not sloppy</span>
         </h1>
-        <p className="font-Fugaz font-bold text-[1.2rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.2rem] text-balance leading-snug max-w-[90vw] md:max-w-[70vw]">
+        <p className="font-Fugaz dark:text-white font-bold text-[1.2rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[2.2rem] text-balance leading-snug max-w-[90vw] md:max-w-[70vw]">
           MVPs delivered in 20 days with clean & maintainable code
         </p>
 
@@ -103,7 +107,7 @@ const Hero = ({ getStarted = () => { } }) => {
               transition: { duration: 0.5, ease: "easeInOut" },
             }}
             animate={{ y: 0 }}
-            className="bg-white text-accent font-bold font-poppins text-[0.8rem] md:text-[1rem] px-4 md:px-10 py-2 md:py-4 rounded-xl border-2 border-accent flex gap-1"
+            className="bg-white dark:bg-darkprimary text-accent dark:text-white font-bold font-poppins text-[0.8rem] md:text-[1rem] px-4 md:px-10 py-2 md:py-4 rounded-xl border-2 border-accent dark:border-white flex gap-1"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
