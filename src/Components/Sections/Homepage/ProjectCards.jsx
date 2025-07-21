@@ -1,97 +1,56 @@
-import React from 'react'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import coding from '../../../assets/images/coding.png'
+import ProjectCard from '../../ProjectCard'
+import Dashboard from '../../../assets/images/dashboart.png'
 
 const projects = [
     {
-        title: 'Weather App',
-        description: 'A weather forecasting app using OpenWeather API.',
+        title: 'School Management Server (backend)',
+        description: 'Backend Server made with @Fastapi using Postgres with Vertical Slicing Architecture Satisfying the all needs of a School managment System',
         imageUrl: coding,
-        github: 'https://github.com/yourname/weather-app',
-        live: 'https://weatherapp.example.com',
+        github: 'https://github.com/babaji1607/first-step-school-server',
+        // live: 'https://weatherapp.example.com',
+        technologies: ["Fastapi", "AWS S3", "Python", "SQL Model", "Pydantic"]
     },
     {
-        title: 'Todo App',
-        description: 'Track tasks easily with this React-powered app.',
-        imageUrl: coding,
-        github: 'https://github.com/yourname/todo-app',
+        title: 'School Management Dashboard',
+        description: 'A full-functional dashboard for school managment for my client',
+        imageUrl: Dashboard,
+        github: 'https://github.com/babaji1607/admin-dashboard',
+        // live: 'https://weatherapp.example.com',
+        technologies: ["React", "Javascript"]
     },
     {
-        title: 'Portfolio',
-        description: 'My personal website showcasing all my work.',
-        imageUrl: coding,
-        live: 'https://portfolio.example.com',
+        title: 'First Step school Mobile app',
+        description: 'A fully customized Mobile application made with Expo(react native) for the students and teachers, Students are updated with information and teachers can take attendance and upload the relevent things',
+        imageUrl: Dashboard,
+        github: 'https://github.com/babaji1607/school-app',
+        // live: 'https://weatherapp.example.com',
+        technologies: ["React Native", "Typescript", "Expo"]
     },
-    {
-        title: 'Chat App',
-        description: 'Real-time chat application using Firebase.',
-        imageUrl: coding,
-        github: 'https://github.com/yourname/chat-app',
-    },
+
 ]
 
 const ProjectCardGrid = () => {
     return (
-        <div className="w-full py-12 px-4 max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8 dark:text-white">Projects</h2>
-            <div className="flex flex-wrap justify-center gap-6">
+        <main className="container mx-auto py-12 px-4 bg-slate-50">
+            <h1 className="mb-8 text-3xl font-bold text-center text-slate-800">Our Projects</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((project, idx) => (
-                    <div
-                        key={idx}
-                        className="w-full sm:w-[45%] md:w-[30%] lg:w-[22%] p-2 rounded-[18px] metallic-border"
-                    >
-                        <div className="aspect-[3/4] sm:aspect-[2/3] bg-white shadow-md rounded-[16px] overflow-hidden group relative">
-                            <img
-                                src={project.imageUrl}
-                                alt={project.title}
-                                className="w-full h-full object-cover"
-                            />
-
-                            {/* Overlay */}
-                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent rounded-b-[16px] transition-all duration-300 h-20 group-hover:h-full overflow-hidden">
-                                <div className="absolute bottom-4 left-4 right-4 transition-transform duration-300 transform group-hover:-translate-y-24">
-                                    <h3 className="text-xl font-semibold text-white">
-                                        {project.title}
-                                    </h3>
-                                </div>
-                                <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
-                                    <p className="text-sm text-white mb-2">
-                                        {project.description}
-                                    </p>
-                                    <div className="flex gap-3">
-                                        {project.github && (
-                                            <a
-                                                href={project.github}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                <FaGithub
-                                                    size={18}
-                                                    className="text-white hover:text-blue-400"
-                                                />
-                                            </a>
-                                        )}
-                                        {project.live && (
-                                            <a
-                                                href={project.live}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                <FaExternalLinkAlt
-                                                    size={18}
-                                                    className="text-white hover:text-green-400"
-                                                />
-                                            </a>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ProjectCard
+                        title={project.title}
+                        key={idx + project.title}
+                        description={project.description}
+                        imageUrl={project.imageUrl}
+                        projectUrl={project.github}
+                        technologies={project.technologies}
+                    />
                 ))}
             </div>
-        </div>
+        </main>
     )
 }
 
 export default ProjectCardGrid
+
+
+

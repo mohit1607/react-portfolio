@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import Hero from '../Components/Sections/Homepage/Hero'
-import Testimonials from '../Components/Sections/Homepage/Testimonials'
+// import Testimonials from '../Components/Sections/Homepage/Testimonials'
 import About from '../Components/Sections/Homepage/About'
 // import ProofOfWork from '../Components/Sections/Homepage/ProofOfWork'
 import Footer from '../Components/Sections/Footer'
@@ -10,7 +10,7 @@ import logo from '../assets/images/opaquelogo.png'
 import ProjectCards from '../Components/Sections/Homepage/ProjectCards'
 // import PatternStripe from '../Components/PatternStripe'
 import resume from '../assets/resume.pdf'
-import ThemeToggle from '../features/ThemeToggle'
+// import ThemeToggle from '../features/ThemeToggle'
 
 export const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -19,7 +19,7 @@ export const Home = () => {
   const heroRef = useRef(null)
   const skillsRef = useRef(null)
   const proofRef = useRef(null)
-  const testimonialsRef = useRef(null)
+  // const testimonialsRef = useRef(null)
   const aboutRef = useRef(null)
   const formRef = useRef(null)
 
@@ -51,7 +51,7 @@ export const Home = () => {
             <span className={`absolute h-1 w-8 bg-black rounded transition-all duration-300 ease-in-out ${menuOpen ? '-rotate-45 top-2.5' : 'top-5'}`} />
           </div>
         </div>
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
       </div>
 
       {/* Sidebar */}
