@@ -12,7 +12,7 @@ const Error404 = () => {
           Oops! Page Not Found
         </h2>
         <p className="mb-8 text-gray-300">
-          Sorry, the page you are looking for doesn’t exist or has been moved.
+          Sorry, the page you are looking for doesn’t exist or has been removed
         </p>
         <Link
           to="/"
