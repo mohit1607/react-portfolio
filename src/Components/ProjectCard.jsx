@@ -58,39 +58,5 @@ const ProjectCard = ({
     );
 };
 
-// Demo component to show the card in action
-const Demo = () => {
-    const sampleProject = {
-        title: "E-Commerce Dashboard",
-        description: "A comprehensive admin dashboard for managing online stores with real-time analytics, inventory management, and customer insights.",
-        imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-        projectUrl: "https://example.com",
-        technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"]
-    };
 
-    return (
-        <div className="min-h-screen bg-gray-100 p-4">
-            <div className="max-w-6xl mx-auto">
-                <h1 className="text-3xl font-bold text-center mb-8">Mobile Responsive Project Card</h1>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <ProjectCard {...sampleProject} />
-                    <ProjectCard 
-                        {...sampleProject} 
-                        title="Mobile App"
-                        description="A React Native mobile application with cross-platform compatibility."
-                        technologies={["React Native", "Expo", "Firebase"]}
-                    />
-                    <ProjectCard 
-                        {...sampleProject} 
-                        title="Portfolio Website"
-                        description="A modern portfolio website showcasing creative work and projects."
-                        technologies={["Next.js", "Framer Motion", "CSS"]}
-                    />
-                </div>
-            </div>
-        </div>
-    );
-};
-
-export default Demo;
+export default ProjectCard
