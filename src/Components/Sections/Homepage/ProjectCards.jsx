@@ -1,6 +1,7 @@
 import coding from '../../../assets/images/coding.png'
 import ProjectCard from '../../ProjectCard'
-import Dashboard from '../../../assets/images/dashboart.png'
+import Dashboard from '../../../assets/images/dashboard.png'
+import mockups from '../../../assets/images/mockups.png'
 
 const projects = [
     {
@@ -22,7 +23,7 @@ const projects = [
     {
         title: 'First Step school Mobile app',
         description: 'A fully customized Mobile application made with Expo(react native) for the students and teachers, Students are updated with information and teachers can take attendance and upload the relevent things',
-        imageUrl: Dashboard,
+        imageUrl: mockups,
         github: 'https://github.com/babaji1607/school-app',
         // live: 'https://weatherapp.example.com',
         technologies: ["React Native", "Typescript", "Expo"]
