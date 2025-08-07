@@ -1,6 +1,6 @@
-# React + Vite
+# Portfolio Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a good UX portfolio template you can use it in your own project too
 
 Currently, two official plugins are available:
 
