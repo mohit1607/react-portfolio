@@ -2,13 +2,14 @@ import coding from '../../../assets/images/coding.png'
 import ProjectCard from '../../ProjectCard'
 import Dashboard from '../../../assets/images/dashboard.png'
 import mockups from '../../../assets/images/mockups.png'
+import gymapp from '../../../assets/images/gymappmobile.png'
 
 const projects = [
     {
         title: 'School Management Server (backend)',
         description: 'Backend Server made with @Fastapi using Postgres with Vertical Slicing Architecture Satisfying the all needs of a School managment System',
         imageUrl: coding,
-        github: 'https://github.com/babaji1607/first-step-school-server',
+        github: 'https://firststepschool.xyz',
         // live: 'https://weatherapp.example.com',
         technologies: ["Fastapi", "AWS S3", "Python", "SQL Model", "Pydantic"]
     },
@@ -16,7 +17,7 @@ const projects = [
         title: 'School Management Dashboard',
         description: 'A full-functional dashboard for school managment for my client',
         imageUrl: Dashboard,
-        github: 'https://github.com/babaji1607/admin-dashboard',
+        github: 'https://admin.firststepschool.xyz',
         // live: 'https://weatherapp.example.com',
         technologies: ["React", "Javascript"]
     },
@@ -27,6 +28,14 @@ const projects = [
         github: 'https://github.com/babaji1607/school-app',
         // live: 'https://weatherapp.example.com',
         technologies: ["React Native", "Typescript", "Expo"]
+    },
+    {
+        title: 'Gym Booking Mobile App',
+        description: 'An app for gated community to book gym slots and manage their fitness activities, and manage in and out timings',
+        imageUrl: gymapp,
+        github: 'https://play.google.com/store/apps/details?id=com.newproject2&hl=en_IN',
+        // live: 'https://weatherapp.example.com',
+        technologies: ["React Native", "Typescript", "Firebase", "Redux"]
     },
 
 ]

@@ -100,11 +100,11 @@ export const Home = () => {
           getStarted={() => scrollToSection(formRef)}
         />
       </section>
-      <section ref={aboutRef}><About /></section>
       <section ref={proofRef}><ProjectCards /></section>
+      <section ref={skillsRef}><Skills /></section>
       {/* <section ref={testimonialsRef}><Testimonials /></section> */}
       {/* <section ref={proofRef}><ProofOfWork /></section> */}
-      <section ref={skillsRef}><Skills /></section>
+      <section ref={aboutRef}><About /></section>
       <section className='w-full' ref={formRef}><Form /></section>
       <Footer />
     </div>
