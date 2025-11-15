@@ -3,6 +3,7 @@ import ProjectCard from '../../ProjectCard'
 import Dashboard from '../../../assets/images/dashboard.png'
 import mockups from '../../../assets/images/mockups.png'
 import gymapp from '../../../assets/images/gymappmobile.png'
+import lj from '../../../assets/images/laxmijewellwers.png'
 
 const projects = [
     {
@@ -37,6 +38,22 @@ const projects = [
         // live: 'https://weatherapp.example.com',
         technologies: ["React Native", "Typescript", "Firebase", "Redux"]
     },
+    {
+        title: 'Jewellery Ecommerce application',
+        description: 'A simple ecommerce application for a local jeweller to showcase and sell their products online',
+        imageUrl: lj,
+        // github: 'https://play.google.com/store/apps/details?id=com.newproject2&hl=en_IN',
+        live: 'https://www.laxmijewellers.shop',
+        technologies: ["Next.js", "Typescript", "Sanity"]
+    },
+    {
+        title: 'Omzi Mobile App Performance Optimization',
+        description: 'Optimized performance bottlenecks of Astrology app Omzi with thousands of daily users',
+        imageUrl: 'https://play-lh.googleusercontent.com/vjr8ltNNdhXUcC6iJjM95YGoOBFxSbuNqcdSiLaTkbwUzor_EJwk6RLY2XnphGUz2KXaNndugp7oB73rq6QnZw=w480-h960-rw',
+        github: 'https://play.google.com/store/apps/details?id=com.newproject2&hl=en_IN',
+        live: 'https://play.google.com/store/apps/details?id=com.hrish17.boltexponativewind&hl=en_IN',
+        technologies: ["React Native", "Typescript", "Firebase", "Redux"]
+    },
 
 ]
 
@@ -45,7 +62,7 @@ const ProjectCardGrid = () => {
         <main className="container mx-auto py-12 px-4 bg-slate-50">
             <h1 className="mb-8 text-3xl font-bold text-center text-slate-800">Our Projects</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map((project, idx) => (
+                {projects.reverse().map((project, idx) => (
                     <ProjectCard
                         title={project.title}
                         key={idx + project.title}
