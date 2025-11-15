@@ -91,4 +91,58 @@ html.lenis body {
         rgba(17, 17, 17, 0.6) 90%,
         #111 100%);
   }
+
+  .bg-fade-top {
+    background: linear-gradient(to top,
+        transparent 0%,
+        transparent 75%,
+        rgba(255, 255, 255, 0.2) 80%,
+        rgba(255, 255, 255, 0.6) 90%,
+        rgba(255, 255, 255, 1) 100%);
+  }
+
+  .dark-bg-fade-top {
+    background: linear-gradient(to top,
+        transparent 0%,
+        transparent 75%,
+        rgba(17, 17, 17, 0.2) 80%,
+        rgba(17, 17, 17, 0.6) 90%,
+        #111 100%);
+  }
+
+  .bg-fade-left {
+    background: linear-gradient(to left,
+        transparent 0%,
+        transparent 75%,
+        rgba(255, 255, 255, 0.2) 80%,
+        rgba(255, 255, 255, 0.6) 90%,
+        rgba(255, 255, 255, 1) 100%);
+  }
+
+  .dark-bg-fade-left {
+    background: linear-gradient(to left,
+        transparent 0%,
+        transparent 75%,
+        rgba(17, 17, 17, 0.2) 80%,
+        rgba(17, 17, 17, 0.6) 90%,
+        #111 100%);
+  }
+
+  .bg-fade-right {
+    background: linear-gradient(to right,
+        transparent 0%,
+        transparent 75%,
+        rgba(255, 255, 255, 0.2) 80%,
+        rgba(255, 255, 255, 0.6) 90%,
+        rgba(255, 255, 255, 1) 100%);
+  }
+
+  .dark-bg-fade-right {
+    background: linear-gradient(to right,
+        transparent 0%,
+        transparent 75%,
+        rgba(17, 17, 17, 0.2) 80%,
+        rgba(17, 17, 17, 0.6) 90%,
+        #111 100%);
+  }
 }
