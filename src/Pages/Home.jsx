@@ -105,7 +105,7 @@ export const Home = () => {
       {/* <section ref={testimonialsRef}><Testimonials /></section> */}
       {/* <section ref={proofRef}><ProofOfWork /></section> */}
       <section ref={aboutRef}><About /></section>
-      <section className='w-full' ref={formRef}><Form /></section>
+      {/* <section className='w-full' ref={formRef}><Form /></section> */}
       <Footer />
     </div>
   )

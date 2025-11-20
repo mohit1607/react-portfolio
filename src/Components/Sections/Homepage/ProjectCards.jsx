@@ -1,9 +1,36 @@
 import coding from '../../../assets/images/coding.png'
-import ProjectCard from '../../ProjectCard'
+import ProjectCard2 from './ProjectCard2'
 import Dashboard from '../../../assets/images/dashboard.png'
 import mockups from '../../../assets/images/mockups.png'
 import gymapp from '../../../assets/images/gymappmobile.png'
 import lj from '../../../assets/images/laxmijewellwers.png'
+import nextjs from '../../../assets/images/skills/nextjs.png'
+import python from '../../../assets/images/skills/python.png'
+import aipowered from '../../../assets/images/skills/chatgpt.png'
+import reactlogo from '../../../assets/images/skills/reactlogo.png'
+import reactnative from '../../../assets/images/skills/reactnative.png'
+import ts from '../../../assets/images/skills/ts.png'
+import expo from '../../../assets/images/skills/expo.png'
+import fastapi from '../../../assets/images/skills/fastapi.png'
+import sanity from '../../../assets/images/skills/sanity.png'
+import js from '../../../assets/images/skills/js.png'
+
+const iconMap = {
+    "Fastapi": { image: fastapi, alt: 'FastAPI', url: 'fastapi.tiangolo.com' },
+    "AWS S3": { image: aipowered, alt: 'AWS S3', url: 'aws.amazon.com/s3/' },
+    "Python": { image: python, alt: 'Python', url: 'python.org' },
+    "SQL Model": { image: python, alt: 'SQLModel', url: 'sqlmodel.tiangolo.com' },
+    "Pydantic": { image: python, alt: 'Pydantic', url: 'pydantic-docs.helpmanual.io' },
+    "React": { image: reactlogo, alt: 'React', url: 'reactjs.org' },
+    "Javascript": { image: js, alt: 'JavaScript', url: 'javascript.com' },
+    "React Native": { image: reactnative, alt: 'React Native', url: 'reactnative.dev' },
+    "Typescript": { image: ts, alt: 'TypeScript', url: 'typescriptlang.org' },
+    "Expo": { image: expo, alt: 'Expo', url: 'expo.dev' },
+    "Firebase": { image: aipowered, alt: 'Firebase', url: 'firebase.google.com' },
+    "Redux": { image: reactlogo, alt: 'Redux', url: 'redux.js.org' },
+    "Next.js": { image: nextjs, alt: 'Next.js', url: 'nextjs.org' },
+    "Sanity": { image: sanity, alt: 'Sanity', url: 'sanity.io' }
+}
 
 const projects = [
     {
@@ -39,7 +66,7 @@ const projects = [
         technologies: ["React Native", "Typescript", "Firebase", "Redux"]
     },
     {
-        title: 'Jewellery Ecommerce application',
+        title: 'Laxmi Jewellers online store',
         description: 'A simple ecommerce application for a local jeweller to showcase and sell their products online',
         imageUrl: lj,
         // github: '',
@@ -62,16 +89,20 @@ const ProjectCardGrid = () => {
         <main className="container mx-auto py-12 px-4 bg-slate-50">
             <h1 className="mb-8 text-3xl font-bold text-center text-slate-800">Our Projects</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.reverse().map((project, idx) => (
-                    <ProjectCard
-                        title={project.title}
-                        key={idx + project.title}
-                        description={project.description}
-                        imageUrl={project.imageUrl}
-                        projectUrl={project.github}
-                        technologies={project.technologies}
-                    />
-                ))}
+                {projects.reverse().map((project, idx) => {
+                    const iconPack = project.technologies.map(tech => iconMap[tech] || { image: aipowered, alt: tech, url: '#' }).filter(Boolean)
+                    return (
+                        <ProjectCard2
+                            key={idx + project.title}
+                            projectTitle={project.title}
+                            descritpion={project.description}
+                            imageURL={project.imageUrl}
+                            liveURL={project.github}
+                            iconPack={iconPack}
+                            idx={idx}
+                        />
+                    )
+                })}
             </div>
         </main>
     )

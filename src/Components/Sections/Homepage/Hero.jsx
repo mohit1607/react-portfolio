@@ -54,17 +54,11 @@ const Hero = ({ getStarted = () => { } }) => {
   useGSAP(
     () => {
       gsap.from(".heroText", {
-        x: () => (Math.random() - 0.5) * window.innerWidth * 0.9,
-        y: () => (Math.random() - 0.5) * window.innerHeight * 0.9,
+        y: 50,
         opacity: 0,
-        rotation: () => Math.random() * 360,
-        scale: () => Math.random() * 2 + 0.5,
-        duration: 1.5,
-        ease: "power3.out",
-        stagger: {
-          amount: 0.5,
-          from: "random"
-        }
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.02
       });
 
       // Skill images shattering animation - emerges from center and scatters outward
@@ -92,10 +86,9 @@ const Hero = ({ getStarted = () => { } }) => {
           opacity: 0.5,
           rotation: () => Math.random() * 100,
           scale: 1,
-          delay: 0.2,
+          delay: 1.5,
           duration: 1.2,
-          ease: "power2.out",
-          stagger: 0.08
+          ease: "power3.out"
         }
       );
     },
