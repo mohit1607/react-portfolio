@@ -67,7 +67,7 @@ const ProjectCard2 = ({
     }
 
     return (
-        <div className='w-[24rem] p-2 rounded-lg group'>
+        <div className='w-[23rem] p-2 rounded-lg group'>
             <div className={`w-full relative aspect-video overflow-hidden rounded-md shadow-lg mb-4 ${selectedGradient}`}>
                 <div className='w-full -rotate-[15deg] border-white shadow-lg border-2 rounded-lg overflow-hidden absolute left-[25%] top-[25%] transition-all group-hover:left-0 group-hover:top-0 group-hover:rotate-0 group-hover:border-none duration-300'>
                     <img className='w-full h-full' src={imageURL} alt="project image" />

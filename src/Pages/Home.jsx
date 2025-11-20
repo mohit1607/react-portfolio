@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import Hero from '../Components/Sections/Homepage/Hero'
-// import Testimonials from '../Components/Sections/Homepage/Testimonials'
+import Testimonials from '../Components/Sections/Homepage/Testimonials'
 import About from '../Components/Sections/Homepage/About'
 // import ProofOfWork from '../Components/Sections/Homepage/ProofOfWork'
 import Footer from '../Components/Sections/Footer'
@@ -102,7 +102,7 @@ export const Home = () => {
       </section>
       <section ref={proofRef}><ProjectCards /></section>
       <section ref={skillsRef}><Skills /></section>
-      {/* <section ref={testimonialsRef}><Testimonials /></section> */}
+      <section><Testimonials /></section>
       {/* <section ref={proofRef}><ProofOfWork /></section> */}
       <section ref={aboutRef}><About /></section>
       {/* <section className='w-full' ref={formRef}><Form /></section> */}

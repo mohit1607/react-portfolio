@@ -145,4 +145,56 @@ html.lenis body {
         rgba(17, 17, 17, 0.6) 90%,
         #111 100%);
   }
+
+  /* Testimonials slider utilities */
+  @keyframes testimonial-marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .testimonial-slider-mask {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .testimonial-slider-mask::before,
+  .testimonial-slider-mask::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .testimonial-slider-mask::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8), transparent);
+  }
+
+  .testimonial-slider-mask::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8), transparent);
+  }
+
+  .testimonial-marquee {
+    display: flex;
+    width: max-content;
+    animation: testimonial-marquee 40s linear infinite;
+  }
+
+  .testimonial-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .testimonial-card {
+    flex: 0 0 auto;
+  }
 }
