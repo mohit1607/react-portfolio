@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import resume from "../../../assets/resume.pdf";
+import blastSound from "../../../assets/sounds/blast.mp3";
 import nextjsIcon from "../../../assets/images/skills/nextjs.png";
 import expoIcon from "../../../assets/images/skills/expo.png";
 import reactIcon from "../../../assets/images/skills/reactlogo.png";
@@ -19,7 +20,14 @@ import reactNativeIcon from "../../../assets/images/skills/reactnative.png";
 const Hero = ({ getStarted = () => { } }) => {
   const [readyAnimate, setReadyAnimate] = useState(false);
   const heroText = useRef(null);
+  const audioRef = useRef(null);
   const skillImagesRef = useRef(null);
+
+  useEffect(() => {
+    // Preload audio
+    audioRef.current = new Audio(blastSound);
+    audioRef.current.load();
+  }, []);
 
   const skillLogos = [
     { src: nextjsIcon, name: "Next.js" },
@@ -88,7 +96,13 @@ const Hero = ({ getStarted = () => { } }) => {
           scale: 1,
           delay: 1.5,
           duration: 1.2,
-          ease: "power3.out"
+          ease: "power3.out",
+          onStart: () => {
+            if (audioRef.current) {
+              audioRef.current.currentTime = 0;
+              audioRef.current.play().catch(err => console.log('Audio play failed:', err));
+            }
+          }
         }
       );
     },

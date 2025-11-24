@@ -1,16 +1,15 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, lazy, Suspense } from 'react'
 import Hero from '../Components/Sections/Homepage/Hero'
-// import Testimonials from '../Components/Sections/Homepage/Testimonials'
-import About from '../Components/Sections/Homepage/About'
-// import ProofOfWork from '../Components/Sections/Homepage/ProofOfWork'
-import Footer from '../Components/Sections/Footer'
-import Skills from '../Components/Sections/Homepage/Skills'
-import Form from '../Components/Sections/Homepage/Form'
 import logo from '../assets/images/opaquelogo.png'
-import ProjectCards from '../Components/Sections/Homepage/ProjectCards'
-// import PatternStripe from '../Components/PatternStripe'
 import resume from '../assets/resume.pdf'
-// import ThemeToggle from '../features/ThemeToggle'
+
+// Lazy load sections
+const Testimonials = lazy(() => import('../Components/Sections/Homepage/Testimonials'))
+const About = lazy(() => import('../Components/Sections/Homepage/About'))
+const Footer = lazy(() => import('../Components/Sections/Footer'))
+const Skills = lazy(() => import('../Components/Sections/Homepage/Skills'))
+const Form = lazy(() => import('../Components/Sections/Homepage/Form'))
+const ProjectCards = lazy(() => import('../Components/Sections/Homepage/ProjectCards'))
 
 export const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -100,13 +99,13 @@ export const Home = () => {
           getStarted={() => scrollToSection(formRef)}
         />
       </section>
-      <section ref={proofRef}><ProjectCards /></section>
-      <section ref={skillsRef}><Skills /></section>
-      {/* <section ref={testimonialsRef}><Testimonials /></section> */}
-      {/* <section ref={proofRef}><ProofOfWork /></section> */}
-      <section ref={aboutRef}><About /></section>
-      {/* <section className='w-full' ref={formRef}><Form /></section> */}
-      <Footer />
+      <Suspense fallback={<div className='w-full h-32 flex items-center justify-center'><div className='animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-accent'></div></div>}>
+        <section ref={proofRef}><ProjectCards /></section>
+        <section ref={skillsRef}><Skills /></section>
+        <section ><Testimonials /></section>
+        <section ref={aboutRef}><About /></section>
+        <Footer />
+      </Suspense>
     </div>
   )
 }

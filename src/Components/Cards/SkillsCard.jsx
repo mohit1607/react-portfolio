@@ -21,7 +21,7 @@ const SkillsCard = ({
             className='d3d h-32 w-32 flex justify-center items-center rounded-xl flex-col gap-2 bg-[#f4f4f4]'
             options={defaultOptions}>
             <div className='w-12 h-12 aspect-square grid place-items-center rounded-full bg-transparent translate-z-[300px] presZ'>
-                <img src={image} alt="" />
+                <img src={image} alt="" loading="lazy" />
             </div>
             <p className='text-lg font-bold'>
                 {text}

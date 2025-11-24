@@ -17,6 +17,7 @@ const ProjectCard = ({
                     alt={title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     style={{ objectPosition: "center 20%" }}
+                    loading="lazy"
                 />
 
                 {/* Blurred Overlay on Hover */}

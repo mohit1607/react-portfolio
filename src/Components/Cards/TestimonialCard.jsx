@@ -1,31 +1,36 @@
 import React from 'react'
-import yelan from '../../assets/images/yelan.png'
+import PropTypes from 'prop-types'
 
 const TestimonialCard = ({
-  elevated = false,
-  image = yelan,
-  name = 'Yelan',
-  position = 'Character at Genshin Impact',
-  feedback = 'Mohit is just godly gifted, the way he approaches each and every problem is phenomenal as I am going to hire him for my all biggest possible projects now'
+  image,
+  name,
+  position,
+  feedback
 }) => {
   return (
-    <div className={`rounded-[20px] px-[2rem] gap-8 justify-start py-8 bg-white max-w-[25rem]  flex flex-col items-center scale-95 shadow-[0px_0px_26px_-3px_rgba(0,_0,_0,_0.2)] ${elevated && '-translate-y-[70px]'}`}>
-      <div className='bg-[#f4f4f4] flex w-full gap-4 p-4 rounded-xl'>
-        <div className='rounded-full overflow-hidden w-[5rem] h-[5rem]'>
-          <img className='w-full h-full object-cover' src={image} alt="yelan genshin impact" />
-        </div>
-        <div className='flex-1'>
-          <h4 className='font-poppins text-[24px] self-start font-semibold'>{name}</h4>
-          <p className='self-start text-sm font-medium line-clamp-2'>{position}</p>
-        </div>
+    <div className='rounded-[20px] px-[1rem] sm:px-[2rem] py-6 sm:py-8 bg-white w-[16rem] sm:w-[20rem] md:w-[25rem] flex flex-col items-center border border-[#ecbfbf] flex-shrink-0'>
+      {/* Image */}
+      <div className='rounded-full overflow-hidden w-[5rem] sm:w-[6rem] h-[5rem] sm:h-[6rem] mb-4'>
+        <img className='w-full h-full object-cover' src={image} alt={name} loading="lazy" />
       </div>
-
-      {/* text  */}
-      <p className='font-poppins text-[16px] font-light mb-[30px] text-[#727070]'>
-        {feedback}
+      {/* Feedback */}
+      <p className='font-poppins text-[14px] sm:text-[16px] font-light text-center text-[#727070] mb-4'>
+        &ldquo;{feedback}&rdquo;
       </p>
+      {/* Name and Position */}
+      <div className='text-center'>
+        <h4 className='font-poppins text-[18px] sm:text-[20px] font-semibold'>{name}</h4>
+        <p className='text-xs sm:text-sm font-medium text-gray-600'>{position}</p>
+      </div>
     </div>
   )
+}
+
+TestimonialCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  position: PropTypes.string.isRequired,
+  feedback: PropTypes.string.isRequired
 }
 
 export default TestimonialCard

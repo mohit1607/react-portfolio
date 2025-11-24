@@ -146,3 +146,22 @@ html.lenis body {
         #111 100%);
   }
 }
+
+/* Marquee animation for testimonials */
+.marquee-container {
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-container:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
