@@ -17,7 +17,7 @@ import pythonIcon from "../../../assets/images/skills/python.png";
 import figmaIcon from "../../../assets/images/skills/figma.png";
 import reactNativeIcon from "../../../assets/images/skills/reactnative.png";
 
-const Hero = ({ getStarted = () => { } }) => {
+const Hero = ({ getStarted = () => { }, animationStarted = false }) => {
   const [readyAnimate, setReadyAnimate] = useState(false);
   const heroText = useRef(null);
   const audioRef = useRef(null);
@@ -28,6 +28,22 @@ const Hero = ({ getStarted = () => { } }) => {
     audioRef.current = new Audio(blastSound);
     audioRef.current.load();
   }, []);
+
+  useEffect(() => {
+    if (animationStarted && !readyAnimate && heroText.current) {
+      // Split text for animation
+      let text = heroText.current.textContent;
+      text = text.split("");
+      heroText.current.innerHTML = text
+        .map((letter) => {
+          if (letter === " ")
+            return `<span class="heroText inline-block">&nbsp;</span>`;
+          return `<span class="heroText inline-block">${letter}</span>`;
+        })
+        .join("");
+      setReadyAnimate(true);
+    }
+  }, [animationStarted, readyAnimate]);
 
   const skillLogos = [
     { src: nextjsIcon, name: "Next.js" },
@@ -46,21 +62,10 @@ const Hero = ({ getStarted = () => { } }) => {
     y: Math.random() * range - range / 2,
   });
 
-  useEffect(() => {
-    let text = heroText.current.textContent;
-    text = text.split("");
-    heroText.current.innerHTML = text
-      .map((letter) => {
-        if (letter === " ")
-          return `<span class="heroText inline-block">&nbsp;</span>`;
-        return `<span class="heroText inline-block">${letter}</span>`;
-      })
-      .join("");
-    setReadyAnimate(true);
-  }, []);
-
   useGSAP(
     () => {
+      if (!readyAnimate) return;
+
       gsap.from(".heroText", {
         y: 50,
         opacity: 0,

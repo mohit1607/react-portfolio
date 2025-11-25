@@ -1,4 +1,5 @@
 import { useState, useRef, lazy, Suspense } from 'react'
+import { motion } from 'framer-motion'
 import Hero from '../Components/Sections/Homepage/Hero'
 import logo from '../assets/images/opaquelogo.png'
 import resume from '../assets/resume.pdf'
@@ -13,6 +14,7 @@ const ProjectCards = lazy(() => import('../Components/Sections/Homepage/ProjectC
 
 export const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [animationStarted, setAnimationStarted] = useState(false)
 
   // Refs for each section
   const heroRef = useRef(null)
@@ -93,10 +95,55 @@ export const Home = () => {
         </ul>
       </div>
 
+      {/* Welcome Screen Overlay */}
+      {!animationStarted && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0, duration: 0.3 }}
+          onClick={() => setAnimationStarted(true)}
+          className="fixed inset-0 z-[100] flex items-center justify-center cursor-pointer bg-white"
+        >
+          <div className="text-center space-y-6 max-w-2xl px-6">
+            {/* Main CTA Button */}
+            <motion.div
+              animate={{
+                scale: [1, 1.05, 1],
+                opacity: [0.8, 1, 0.8]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="bg-accent text-white px-8 py-4 rounded-2xl font-bold text-xl md:text-2xl shadow-2xl border-2 border-white/30 cursor-pointer hover:bg-accent/90 transition-colors"
+            >
+              🎵 Click to Begin the Experience
+            </motion.div>
+
+            {/* Welcoming Text */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0, duration: 0.8 }}
+              className="space-y-3"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-[#212121] drop-shadow-lg">
+                Welcome to Mohit&apos;s Portfolio
+              </h2>
+            </motion.div>
+
+            {/* Animated hint */}
+
+          </div>
+        </motion.div>
+      )}
+
       {/* Sections with refs */}
       <section className='w-full' ref={heroRef}>
         <Hero
           getStarted={() => scrollToSection(formRef)}
+          animationStarted={animationStarted}
         />
       </section>
       <Suspense fallback={<div className='w-full h-32 flex items-center justify-center'><div className='animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-accent'></div></div>}>
