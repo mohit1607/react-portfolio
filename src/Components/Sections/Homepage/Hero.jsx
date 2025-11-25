@@ -171,17 +171,19 @@ const Hero = ({ getStarted = () => { }, animationStarted = false }) => {
           transition={{ duration: 0.5 }}
           className="flex justify-center gap-4 md:gap-8 z-10"
         >
-          <motion.button
+          <motion.a
             whileHover={{
               y: [0, -10, 10, -10, 10, 0],
               transition: { duration: 0.5, ease: "easeInOut" },
             }}
+            href="https://cal.com/mohit-ashliya-mtjpgu/lets-talk-business"
+            target="_blank"
             animate={{ x: 0 }}
             onClick={getStarted}
             className="bg-accent text-white font-bold font-poppins text-[0.8rem] md:text-[1rem] px-4 md:px-10 py-2 md:py-4 rounded-xl border-2 border-accent"
           >
-            Contact
-          </motion.button>
+            Book Call
+          </motion.a>
 
           <motion.a
             href={resume}
